@@ -1,0 +1,66 @@
+---
+layout: "/layouts/layout.liquid"
+---
+<header class="pt-16 pb-8 px-[5%] mx-auto">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto text-left">
+      <h1>{{ title }}</h1>
+
+      {% if description %}
+        <p class="text-xl lg:text-2xl text-normalLight dark:text-invertedLight max-w-3xl">
+          {{ description }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+{% if projectsTitle and projectsData and content contains '---PROJECTS-BREAK---' %}
+  {% assign contentParts = content | split: '---PROJECTS-BREAK---' %}
+  <section class="prose py-12 px-[5%]">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <article class="prose">
+          {{ contentParts[0] }}
+        </article>
+      </div>
+    </div>
+  </section>
+  {% assign projectList = projects[projectsData] %}
+  {% if projectList and projectList.size > 0 %}
+    {% if projectsData == 'speedOptimization' %}
+      {% render 'partials/speed-optimization-grid', title: projectsTitle, projects: projectList %}
+    {% else %}
+      {% render 'partials/project-grid', title: projectsTitle, projects: projectList %}
+    {% endif %}
+  {% endif %}
+  <section class="prose py-12 px-[5%]">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <article class="prose">
+          {{ contentParts[1] }}
+        </article>
+      </div>
+    </div>
+  </section>
+{% else %}
+  <section class="prose py-12 px-[5%]">
+    <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto">
+        <article class="prose">
+          {{ content }}
+        </article>
+      </div>
+    </div>
+  </section>
+{% endif %}
+{% if ctaTitle %}
+  {% render 'partials/cta-section',
+    title: ctaTitle,
+    description: ctaDescription,
+    buttonText: ctaButtonText,
+    buttonUrl: ctaButtonUrl,
+    variant: 'centered',
+    ctaIcon: ctaIcon
+  %}
+{% endif %}

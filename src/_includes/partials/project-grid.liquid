@@ -1,0 +1,49 @@
+<!-- Project Grid Component -->
+<section class="py-12 px-[5%] {{ customClasses | default: '' }}">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto">
+      {% if title %}
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-left">{{ title }}</h2>
+      {% endif %}
+
+      {% if projects and projects.size > 0 %}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto">
+          {% for project in projects %}
+            <div class="group">
+              <!-- Project Image -->
+              <div class="relative overflow-hidden rounded-lg bg-normal border border-normal shadow-low dark:bg-inverted dark:border-inverted dark:shadow-lowInverted">
+                <img
+                  src="{{ project.image }}"
+                  alt="{{ project.title }}"
+                  class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                >
+              </div>
+
+              <!-- Project Info -->
+              <div class="mt-4">
+                <h3 class="text-xl font-semibold text-normal dark:text-inverted mb-2">{{ project.title }}</h3>
+
+                {% if project.url %}
+                  <a
+                    href="{{ project.url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-primary dark:text-primaryInverted hover:text-primaryLight dark:hover:text-primaryLight transition-colors duration-200 no-underline"
+                  >
+                    <span>View Project</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 256 256">
+                      <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
+                    </svg>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-center text-lg text-normalLight dark:text-invertedLight">No projects available at this time.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>

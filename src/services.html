@@ -1,0 +1,14 @@
+---
+layout: layouts/layout.liquid
+title: Services
+---
+{%- render 'partials/page-header', 
+  header: 'Services', 
+  subheader: 'Comprehensive UX engineering and design solutions to help your business grow and succeed in the digital landscape.'
+-%}
+
+{%- render 'partials/section-standard', 
+  collection: collections.services,
+  gridLayout: true,
+  customClasses: 'pt-0'
+-%}

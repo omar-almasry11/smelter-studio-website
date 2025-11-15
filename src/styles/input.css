@@ -1,0 +1,399 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prism.js Syntax Highlighting Theme */
+@import url('https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css');
+
+@layer base {
+@font-face {
+    font-family: Atkinson Next;
+    src: url('/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf');
+}
+html {
+    @apply text-normal bg-normal;
+  }
+  html.dark {
+    @apply text-inverted bg-inverted;
+  }
+  a {
+    @apply font-medium underline decoration-primary decoration-2 transition duration-300 hover:text-primary hover:decoration-transparent dark:decoration-primaryInverted dark:hover:text-primaryInverted dark:hover:decoration-transparent;
+  }
+  h1 {
+    @apply text-4xl sm:text-6xl font-extrabold mb-6;
+  }
+  p {
+    @apply text-xl;
+  }
+
+  h2 {
+    @apply text-4xl sm:text-5xl font-bold mb-2;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl font-semibold mb-1;
+  }
+  h2, h3 {
+    scroll-margin-top: 80px; /* Adjust to your navbar's height */
+  }
+::selection {
+  @apply bg-inverted text-inverted; /* Apply light mode colors */
+}
+.dark ::selection {
+  @apply bg-normal text-normal; /* Apply dark mode colors */
+}
+a[aria-current=page] {
+  @apply font-medium text-primary dark:text-primaryInverted;
+}
+ }
+ .toc ul a {
+  @apply text-normal font-medium decoration-2 decoration-primary hover:decoration-transparent dark:decoration-primaryInverted dark:text-inverted;
+ }
+
+/* Remove Bullet Points */
+.toc ul {
+  list-style: none;
+  @apply pl-0;
+}
+
+@layer components {
+/* Custom Component Styles */
+.standard-card {
+    @apply border border-normal rounded-md flex flex-col justify-start items-start h-full p-6 no-underline transition-all shadow-low w-full dark:shadow-lowInverted relative dark:border-inverted;
+}
+.prose {
+    @apply prose-h2:text-4xl prose-h2:mb-4 prose-h3:text-2xl prose-h3:font-medium prose-h3:text-normalLight prose-h3:mb-1 prose-h3:mt-6 lg:prose-lg md:prose-base max-w-full dark:prose-inverted dark:prose-h3:text-invertedLight;
+  }
+
+/* Enhanced Prism.js styling for better integration */
+.prose pre[class*="language-"] {
+  @apply rounded-lg shadow-low dark:shadow-lowInverted my-6;
+  background: #2d3748 !important;
+  border: 1px solid #4a5568;
+}
+
+.prose code[class*="language-"] {
+  color: #e2e8f0 !important;
+  text-shadow: none;
+}
+
+/* Dark mode adjustments */
+.dark .prose pre[class*="language-"] {
+  background: #1a202c !important;
+  border-color: #2d3748;
+}
+
+/* Token colors for better visibility */
+.prose .token.comment,
+.prose .token.prolog,
+.prose .token.doctype,
+.prose .token.cdata {
+  color: #718096 !important;
+}
+
+.prose .token.punctuation {
+  color: #e2e8f0 !important;
+}
+
+.prose .token.property,
+.prose .token.tag,
+.prose .token.boolean,
+.prose .token.number,
+.prose .token.constant,
+.prose .token.symbol,
+.prose .token.deleted {
+  color: #f56565 !important;
+}
+
+.prose .token.selector,
+.prose .token.attr-name,
+.prose .token.string,
+.prose .token.char,
+.prose .token.builtin,
+.prose .token.inserted {
+  color: #48bb78 !important;
+}
+
+.prose .token.operator,
+.prose .token.entity,
+.prose .token.url,
+.prose .language-css .token.string,
+.prose .style .token.string {
+  color: #ed8936 !important;
+}
+
+.prose .token.atrule,
+.prose .token.attr-value,
+.prose .token.keyword {
+  color: #9f7aea !important;
+}
+
+.prose .token.function,
+.prose .token.class-name {
+  color: #4299e1 !important;
+}
+
+.prose .token.regex,
+.prose .token.important,
+.prose .token.variable {
+  color: #ed8936 !important;
+}
+
+/* Accessible Lightbox Styles */
+.lightbox-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300;
+}
+
+.lightbox-overlay.active {
+  @apply opacity-100 pointer-events-auto;
+}
+
+.lightbox-content {
+  @apply relative max-w-6xl max-h-full w-full h-full flex items-center justify-center;
+}
+
+.lightbox-image {
+  @apply max-w-full max-h-full object-contain rounded-lg shadow-2xl cursor-zoom-in transition-transform duration-300;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.lightbox-image.zoomed {
+  @apply cursor-grab;
+  transform-origin: center center;
+  transition: transform 0.1s ease-out;
+}
+
+.lightbox-image.zoomed:active {
+  @apply cursor-grabbing;
+}
+
+.lightbox-content.zoomed {
+  overflow: hidden;
+}
+
+/* Prevent text selection during drag */
+.lightbox-overlay * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.lightbox-close {
+  @apply absolute top-4 right-4 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white transition-all duration-200 backdrop-blur-sm;
+}
+
+.lightbox-close:hover {
+  @apply scale-110;
+}
+
+.lightbox-close:focus {
+  @apply outline-none ring-2 ring-white ring-opacity-50;
+}
+
+.lightbox-nav {
+  @apply absolute top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white transition-all duration-200 backdrop-blur-sm;
+}
+
+.lightbox-nav:hover {
+  @apply scale-110;
+}
+
+.lightbox-nav:focus {
+  @apply outline-none ring-2 ring-white ring-opacity-50;
+}
+
+.lightbox-prev {
+  @apply left-4;
+}
+
+.lightbox-next {
+  @apply right-4;
+}
+
+.lightbox-counter {
+  @apply absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full text-sm backdrop-blur-sm;
+}
+
+/* Clickable image cursor */
+.lightbox-trigger {
+  @apply cursor-zoom-in transition-opacity duration-200;
+}
+
+.lightbox-trigger:hover {
+  @apply opacity-90;
+}
+
+/* Screen reader only class for accessibility */
+.sr-only {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* Client Brief Form Styles */
+.form-input {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(61, 96, 226, 0.1);
+}
+
+.dark .form-input:focus {
+  box-shadow: 0 0 0 3px rgba(247, 203, 21, 0.1);
+}
+
+.form-input::placeholder {
+  @apply text-normalLight dark:text-invertedLight;
+  opacity: 0.6;
+}
+
+/* Hide all steps except active one */
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+  width: 100%;
+  flex: 1 1 100%;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress Indicator Styles */
+.step-indicator {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.step-indicator.active {
+  @apply bg-primary dark:bg-primaryInverted text-inverted dark:text-normal;
+  transform: scale(1.1);
+}
+
+.step-indicator.completed {
+  @apply bg-primary dark:bg-primaryInverted text-inverted dark:text-normal;
+}
+
+.step-line {
+  transition: all 0.3s ease;
+}
+
+.step-line.completed {
+  @apply bg-primary dark:bg-primaryInverted;
+}
+
+/* Radio button custom styling */
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 50%;
+  border: 2px solid #515751;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark input[type="radio"] {
+  border-color: #A39594;
+}
+
+input[type="radio"]:checked {
+  border-color: #3d60e2;
+  background-color: #3d60e2;
+  box-shadow: inset 0 0 0 3px white;
+}
+
+.dark input[type="radio"]:checked {
+  border-color: #F7CB15;
+  background-color: #F7CB15;
+  box-shadow: inset 0 0 0 3px #000022;
+}
+
+input[type="radio"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(61, 96, 226, 0.1);
+}
+
+.dark input[type="radio"]:focus {
+  box-shadow: 0 0 0 3px rgba(247, 203, 21, 0.1);
+}
+
+/* Button styles for form */
+.btn-next,
+.btn-submit {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-next:hover,
+.btn-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 34, 0.15);
+}
+
+.dark .btn-next:hover,
+.dark .btn-submit:hover {
+  box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.15);
+}
+
+.btn-next:active,
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+.btn-prev {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-prev:hover {
+  @apply bg-secondary dark:bg-inverted;
+}
+
+/* Loading state for submit button */
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-submit.loading {
+  position: relative;
+  color: transparent;
+}
+
+.btn-submit.loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+}

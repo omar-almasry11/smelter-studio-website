@@ -1,0 +1,596 @@
+---
+layout: /layouts/layout.liquid
+title: About Me
+---
+
+{%- render 'partials/page-header',
+  headerTitle: 'About Me',
+  headerSubtitle: 'A peek into my journey, and what fuels my passion today.',
+-%}
+
+{%- render 'partials/section-standard', 
+  header: 'An Architect Who Fell in Love With the Web',
+  subheader: 'Working at the intersection of design, technology, and accessibility.',
+  content: '<p>My journey started in architecture, a field where I learned the importance of aesthetics, structure, and functionality. However, I found myself increasingly drawn to the limitless possibilities of the digital world. What began as a curiosity soon turned into a passion for creating high-performing web experiences.
+</p>
+  <br>
+  <p>In 2017, I made the leap into web design and development. My background in architecture gave me a unique perspective on problem-solving, design systems, and user-centric thinking. Over the years, I\’ve had the privilege of working with clients from Fortune 500 companies to SMEs, helping them achieve their goals through thoughtful design and robust digital solutions.</p>
+  <br>
+  <p class="mb-12">Today, I work as an independent UX Engineer and accessibility consultant, and I run <a href="https://www.smelter.studio/" target="_blank" rel="noopener noreferrer">Smelter Studio</a>: a product-focused studio that empowers business with scalable and effective web solutions and digital products. 
+</p>
+<h3 class="mb-8 text-lg text-normalLight dark:text-invertedLight">Featured Clients</h3>
+<div class="grid grid-cols-5 gap-4 items-center">
+    <div class="flex justify-center">
+        <img class="w-3/4 sm:w-full max-w-[80px] object-contain dark:hidden" src="/images/duba-holding-logo-2.svg" alt="Dubai Holding Logo">
+        <img class="hidden dark:block dark:w-3/4 dark:max-w-[80px] dark:object-contain" src="/images/dubai-holding-logo-inverted.avif" alt="Dubai Holding Logo">
+    </div>
+    <div class="flex justify-center">
+        <picture>
+            <source srcset="/images/visit-hatta-logo.webp" type="image/webp">
+            <source srcset="/images/visit-hatta-logo.png" type="image/png">
+            <img class="w-3/4 max-w-[80px] object-contain dark:hidden" src="/images/visit-hatta-logo.webp" alt="Visit Hatta Logo">
+        </picture>
+        <img class="hidden dark:block dark:w-3/4 dark:max-w-[50px] dark:object-contain" src="/images/hatta-logo-white.svg" alt="Visit Hatta Logo">
+    </div>
+    <div class="flex justify-center">
+        <picture>
+            <source srcset="/images/bay-square-logo.webp" type="image/webp">
+            <source srcset="/images/bay-square-logo.png" type="image/png">
+            <img class="w-3/4 max-w-[80px] object-contain" src="/images/bay-square-logo.webp" alt="Bay Square Logo">
+        </picture>
+    </div>
+    <div class="flex justify-center">
+        <img class="w-3/4 max-w-[100px] object-contain dark:hidden" src="/images/nakheel-logo.svg" alt="Nakheel Logo">
+        <img class="hidden dark:block dark:w-3/4 dark:max-w-[100px] dark:object-contain" src="/images/nakheel-logo-white.svg" alt="Nakheel Logo">
+    </div>
+    <div class="flex justify-center">
+        <img class="w-3/4 max-w-[100px] object-contain dark:hidden" src="/images/emplifi-logo.svg" alt="Emplifi Logo">
+        <img class="hidden dark:block dark:w-3/4 dark:max-w-[100px] dark:object-contain" src="/images/emplifi-logo-white.svg" alt="Emplifi Logo">
+    </div>
+</div>
+  ',
+-%}
+
+{%- render 'partials/section-standard', 
+  header: 'What My Clients Say',
+  subheader: 'Kind words from lovely people.',
+  content: '<div class="flex flex-col gap-4 w-full sm:grid sm:grid-cols-2 sm:gap-4">
+    <!-- Haley Fraser Testimonial-->
+<div class="standard-card">
+    <div class="w-full mb-4 flex justify-between items-center">
+      <picture>
+        <source srcset="/images/haley-fraser-portrait.webp" type="image/webp">
+        <img
+          src="/images/png/haley-fraser-portrait.png"
+          width="80"
+          height="80"
+          class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
+          alt="Haley Fraser Portrait"
+        >
+      </picture>
+      <img
+          src="/images/emplifi-logo.svg"
+          class="max-w-24 dark:hidden"
+          alt="Emplifi Logo"
+        >
+        <img
+          src="/images/emplifi-logo-white.svg"
+          class="max-w-24 hidden dark:block"
+          alt="Emplifi Logo - White Version"
+        >
+    </div>
+    <p class="italic mb-8">"Omar was terrific to work with. He quickly and skillfully helped re-platform our entire blog to Webflow within our timeline and budget. Omar went above and beyond to help us with our project – we couldn\'t be more thankful!"</p>
+    <div class="mt-auto mb-0">
+      <p class="font-bold text-lg">Haley Fraser</p>
+      <p class="text-normalLight text-sm dark:text-invertedLight">Director of Marketing, Brand and Content</p>
+    </div>
+  </div>
+  
+  <!-- Eleanor Carter Testimonial-->
+  <div class="standard-card">
+    <div class="w-full mb-4 flex justify-between items-center">
+      <picture>
+        <source srcset="/images/eleanor-carter-portrait.webp" type="image/webp">
+        <img
+          src="/images/png/eleanor-carter-portrait.png"
+          width="80"
+          height="80"
+          class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
+          alt="Eleanor Carter Portrait"
+        >
+      </picture>
+      <picture>
+        <source srcset="/images/social-suite-logo.webp" type="image/webp">
+        <img
+          src="/images/png/social-suite-logo.png"
+          class="max-w-24 invert dark:hidden"
+          alt="Socialsuite Logo"
+        >
+      </picture>
+      <picture>
+        <source srcset="/images/social-suite-logo.webp" type="image/webp">
+        <img
+          src="/images/png/social-suite-logo.png"
+          class="max-w-24 hidden dark:block"
+          alt="Socialsuite Logo - White Version"
+        >
+      </picture>
+    </div>
+    <p class="italic mb-8">"It was fantastic to work with Omar - from start to finish he was a delight to work with! Omar went above and beyond to help us deliver our project on time - going above and beyond the original scope of work to help us create an incredible website. His training on the CMS was fantastic, and I recommend Omar to anyone looking for assistance with a Webflow site!"</p>
+    <div class="mt-auto mb-0">
+      <p class="font-bold text-lg">Eleanor Carter</p>
+      <p class="text-normalLight text-sm dark:text-invertedLight">Senior Content Strategist</p>
+    </div>
+  </div>
+  
+  <!-- Victoria Hogg Testimonial-->
+  <div class="standard-card">
+    <div class="w-full mb-4 flex justify-between items-center">
+      <picture>
+        <source srcset="/images/victoria-hogg-portrait.webp" type="image/webp">
+        <img
+          src="/images/png/victoria-hogg-portrait.png"
+          width="80"
+          height="80"
+          class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
+          alt="Victoria Hogg Portrait"
+        >
+      </picture>
+      <picture>
+        <source srcset="/images/4sale-logo.webp" type="image/webp">
+        <img
+          src="/images/png/4sale-logo.png"
+          class="max-w-24 invert dark:hidden"
+          alt="4Sale Logo"
+        >
+      </picture>
+      <picture>
+        <source srcset="/images/4sale-logo.webp" type="image/webp">
+        <img
+          src="/images/png/4sale-logo.png"
+          class="max-w-24 hidden dark:block"
+          alt="4Sale Logo - White Version"
+        >
+      </picture>
+    </div>
+    <p class="italic mb-8">"I\'ve worked with Omar on multiple content projects for different companies - ranging from best-in-class tech brands to small 1-man businesses - and I can safely say Omar is the most creative, engaging, reliable, and awesome content partner I\'ve ever worked with."</p>
+    <div class="mt-auto mb-0">
+      <p class="font-bold text-lg">Victoria Hogg</p>
+      <p class="text-normalLight text-sm dark:text-invertedLight">Marketing Director</p>
+    </div>
+  </div>
+  
+  <!-- Miia Hiltunen Testimonial-->
+  <div class="standard-card">
+    <div class="w-full mb-4 flex justify-between items-center">
+      <picture>
+        <source srcset="/images/miia-hiltunen-portrait.webp" type="image/webp">
+        <img
+          src="/images/png/miia-hiltunen-portrait.png"
+          width="80"
+          height="80"
+          class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
+          alt="Miia Hiltunen Portrait"
+        >
+      </picture>
+      <picture>
+        <source srcset="/images/votech-logo.webp" type="image/webp">
+        <img
+          src="/images/png/votech-logo.png"
+          class="max-w-24 invert dark:hidden"
+          alt="Votech Logo"
+        >
+      </picture>
+      <picture>
+        <source srcset="/images/votech-logo.webp" type="image/webp">
+        <img
+          src="/images/png/votech-logo.png"
+          class="max-w-24 hidden dark:block"
+          alt="Votech Logo - White Version"
+        >
+      </picture>
+    </div>
+    <p class="italic mb-8">"For this job since the very start before even choosing Omar for it, I had such a good feeling about him. I mean go check out his page with his intro video, if your not convinced by his expertise then I\'m speechless! So professional, and in general I loved working with him. Can\'t wait for our future collabs!"</p>
+    <div class="mt-auto mb-0">
+      <p class="font-bold text-lg">Miia Hiltunen</p>
+      <p class="text-normalLight text-sm dark:text-invertedLight">Chief Growth Officer</p>
+    </div>
+  </div>
+  
+  <!-- Caitlin Riesbeck Testimonial-->
+  <div class="standard-card col-span-2">
+    <div class="w-full mb-4 flex justify-between items-center">
+      <picture>
+        <source srcset="/images/caitlin-riesbeck-portrait.webp" type="image/webp">
+        <img
+          src="/images/png/caitlin-riesbeck-portrait.png"
+          width="80"
+          height="80"
+          class="rounded-full mb-4 shadow-medium dark:shadow-mediumInverted"
+          alt="Caitlin Riesbeck Portrait"
+        >
+      </picture>
+      <img
+          src="/images/vim-logo.svg"
+          class="max-w-24 invert dark:hidden"
+          alt="Vim and Co. Logo"
+        >
+        <img
+          src="/images/vim-logo.svg"
+          class="max-w-24 hidden dark:block"
+          alt="Vim and Co. Logo - White Version"
+        >
+    </div>
+    <p class="italic mb-8">"Our boutique marketing agency has had the opportunity to work with Omar as a web designer and developer on multiple projects and he has truly brought value to every single one. His work is fantastic, our clients are thrilled, and beyond that we have found him to be a genuine joy to work with. Hands down cannot recommend Omar enough."</p>
+    <div class="mt-auto mb-0">
+      <p class="font-bold text-lg">Caitlin Riesbeck</p>
+      <p class="text-normalLight text-sm dark:text-invertedLight">Art Director</p>
+    </div>
+  </div>
+  ',
+-%}
+
+{%- render 'partials/section-standard', 
+  header: 'My Life in Cards',
+  subheader: 'Tiny snapshots from my everyday life.',
+  content: '
+  <div class="flex flex-col gap-4 sm:grid grid-cols-6 gap-4">
+    <!-- Location Card -->
+    <div class="standard-card col-span-3 justify-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+        role="img"
+        aria-label="Location Pin"
+        viewBox="0 0 256 256"
+      >
+        <path d="M128,24a80,80,0,0,0-80,80c0,72,80,128,80,128s80-56,80-128A80,80,0,0,0,128,24Zm0,112a32,32,0,1,1,32-32A32,32,0,0,1,128,136Z" opacity="0.2"></path>
+        <path d="M200,224H150.54A266.56,266.56,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25a88,88,0,0,0-176,0c0,31.4,14.51,64.68,42,96.25A266.56,266.56,0,0,0,105.46,224H56a8,8,0,0,0,0,16H200a8,8,0,0,0,0-16ZM56,104a72,72,0,0,1,144,0c0,57.23-55.47,105-72,118C111.47,209,56,161.23,56,104Zm112,0a40,40,0,1,0-40,40A40,40,0,0,0,168,104Zm-64,0a24,24,0,1,1,24,24A24,24,0,0,1,104,104Z"></path>
+      </svg>
+      <h3 class="text-lg sm:text-2xl font-bold">Current Location</h3>
+      <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">Toronto, ON, Canada</p>
+    </div>
+  
+    <!-- Time Card -->
+    <div class="standard-card col-span-3 justify-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+        role="img"
+        aria-label="Clock Icon"
+        viewBox="0 0 256 256"
+      >
+        <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path>
+        <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
+      </svg>
+      <h3 class="text-lg sm:text-2xl font-bold">Local Time</h3>
+      <div class="local-time font-light flex items-center text-lg sm:text-2xl text-normalLight dark:text-invertedLight">
+        <span id="hours" class="time-part w-[2ch] text-center">14</span>
+        <span class="colon mx-0.5">:</span>
+        <span id="minutes" class="time-part w-[2ch] text-center">34</span>
+        <span class="colon mx-0.5">:</span>
+        <span id="seconds" class="time-part w-[2ch] text-center">33</span>
+        <span class="gmt ml-1.5 whitespace-nowrap">(GMT +2)</span>
+      </div>
+    </div>
+
+    <!-- Languages Card -->
+    <div class="standard-card col-span-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+          role="img"
+          aria-label="Languages Icon"
+          viewBox="0 0 256 256"
+        >
+        <path d="M224,184H144l40-80ZM96,127.56h0A95.78,95.78,0,0,0,128,56H64A95.78,95.78,0,0,0,96,127.56Z" opacity="0.2"></path>
+        <path d="M247.15,212.42l-56-112a8,8,0,0,0-14.31,0l-21.71,43.43A88,88,0,0,1,108,126.93,103.65,103.65,0,0,0,135.69,64H160a8,8,0,0,0,0-16H104V32a8,8,0,0,0-16,0V48H32a8,8,0,0,0,0,16h87.63A87.7,87.7,0,0,1,96,116.35a87.74,87.74,0,0,1-19-31,8,8,0,1,0-15.08,5.34A103.63,103.63,0,0,0,84,127a87.55,87.55,0,0,1-52,17,8,8,0,0,0,0,16,103.46,103.46,0,0,0,64-22.08,104.18,104.18,0,0,0,51.44,21.31l-26.6,53.19a8,8,0,0,0,14.31,7.16L148.94,192h70.11l13.79,27.58A8,8,0,0,0,240,224a8,8,0,0,0,7.15-11.58ZM156.94,176,184,121.89,211.05,176Z"></path>        
+    </svg>
+        <h3 class="text-lg sm:text-2xl font-bold">Languages Spoken</h3>
+        <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">English (EN)</p>
+        <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">Arabic (AR)</p>
+        <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">French (FR)</p>
+     </div>
+
+     <!-- Coffee Card -->
+    <div class="standard-card col-span-2 justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+          role="img"
+          aria-label="Coffee Cup Icon"
+          viewBox="0 0 256 256"
+        >
+        <path d="M208,88v48a88,88,0,0,1-51.3,80H83.3A88,88,0,0,1,32,136V88Z" opacity="0.2"></path>
+        <path d="M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z"></path>
+        </svg>       
+        <h3 class="text-lg sm:text-2xl font-bold">Avg. Espresso Shots/Day</h3>
+        <p class="text-lg sm:text-2xl font-light text-normalLight dark:text-invertedLight">5.2</p>
+     </div>
+      <!-- Webflow Partner Card -->
+    <div class="standard-card col-span-2">
+        <h3 class="text-lg sm:text-2xl font-bold">Webflow Premium Partner</h3>
+        <p class="text-lg sm:text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">Recognized by Webflow as a trusted professional for building high-quality websites.</p>
+        <a href="https://webflow.com/@omar-almasrys-workspace" target="_blank" rel="noopener noreferrer">
+        <img src="/images/premium-partner.png" class="max-w-40 shadow-medium dark:shadow-mediumInverted sm:max-w-full mb-4" aria-label="Webflow Premium Partner Label">
+    </a>
+    <a href="https://www.credential.net/a9f3dd6a-ca55-42b2-9b1d-c5f17b6e5a11#acc.41dbHFiS" target="_blank" rel="noopener noreferrer">
+      <img src="/images/webflow-practitioner-certificate.png" class="max-w-40 shadow-medium dark:shadow-mediumInverted sm:max-w-full" aria-label="Webflow Practitioner Certificate">
+  </a>
+      </div>
+
+      <!-- Clients Globe Card -->
+    <div class="standard-card col-span-4 justify-center">      
+        <h3 class="text-lg sm:text-2xl font-bold">Client Locations</h3>
+        <p class="text-lg sm:text-2xl font-light mb-4 text-normalLight dark:text-invertedLight">I\'ve had the pleasure of working with clients from 11 different countries on 5 continents.</p>
+        <div class="globe-embed w-full aspect-square max-w-100 sm:max-w-full"></div>
+       
+     </div>
+
+<!-- Movies Card -->
+<div class="standard-card col-span-6">
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+        role="img"
+        aria-label="Movies Icon"
+        viewBox="0 0 256 256"
+    >
+        <path d="M128,32a96,96,0,1,0,96,96A96,96,0,0,0,128,32ZM80,144a16,16,0,1,1,16-16A16,16,0,0,1,80,144Zm48,48a16,16,0,1,1,16-16A16,16,0,0,1,128,192Zm0-96a16,16,0,1,1,16-16A16,16,0,0,1,128,96Zm48,48a16,16,0,1,1,16-16A16,16,0,0,1,176,144Z" opacity="0.2"></path>
+        <path d="M232,216H183.36A103.95,103.95,0,1,0,128,232H232a8,8,0,0,0,0-16ZM40,128a88,88,0,1,1,88,88A88.1,88.1,0,0,1,40,128Zm88-24a24,24,0,1,0-24-24A24,24,0,0,0,128,104Zm0-32a8,8,0,1,1-8,8A8,8,0,0,1,128,72Zm24,104a24,24,0,1,0-24,24A24,24,0,0,0,152,176Zm-32,0a8,8,0,1,1,8,8A8,8,0,0,1,120,176Zm56-24a24,24,0,1,0-24-24A24,24,0,0,0,176,152Zm0-32a8,8,0,1,1-8,8A8,8,0,0,1,176,120ZM80,104a24,24,0,1,0,24,24A24,24,0,0,0,80,104Zm0,32a8,8,0,1,1,8-8A8,8,0,0,1,80,136Z"></path>
+    </svg>
+    <h3 class="text-lg sm:text-2xl font-bold mb-4">Favorite Movies</h3>
+    <div class="grid grid-cols-3 gap-4 sm:grid sm:grid-cols-5 sm:gap-4">
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/matrix.webp" type="image/webp">
+                <img src="/images/png/matrix.png" alt="The Matrix" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium text-center text-normalLight dark:text-invertedLight">The Matrix</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/truman.webp" type="image/webp">
+                <img src="/images/png/truman.png" alt="The Truman Show" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">The Truman Show</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/parasite.webp" type="image/webp">
+                <img src="/images/png/parasite.png" alt="Parasite" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Parasite</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/inception.webp" type="image/webp">
+                <img src="/images/png/inception.png" alt="Inception" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Inception</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/lotr.webp" type="image/webp">
+                <img src="/images/png/lotr.png" alt="Lord of the Rings" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Lord of the Rings</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/mad-max.webp" type="image/webp">
+                <img src="/images/png/mad-max.png" alt="Mad Max: Fury Road" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Mad Max: Fury Road</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/interstellar.webp" type="image/webp">
+                <img src="/images/png/interstellar.png" alt="Interstellar" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Interstellar</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/shawshank.webp" type="image/webp">
+                <img src="/images/png/shawshank.png" alt="The Shawshank Redemption" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">The Shawshank Redemption</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/dark-knight.webp" type="image/webp">
+                <img src="/images/png/dark-knight.png" alt="The Dark Knight" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">The Dark Knight</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/district9.webp" type="image/webp">
+                <img src="/images/png/district9.png" alt="District 9" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">District 9</p>
+        </div>
+    </div>
+</div>
+
+         <!-- Books Card -->
+<div class="standard-card col-span-6">
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-9 h-9 fill-current mb-4 text-primary dark:text-primaryInverted"
+        role="img"
+        aria-label="Books Icon"
+        viewBox="0 0 256 256"
+    >
+        <path d="M48,72h64V184H48ZM190.64,38.39a8,8,0,0,0-9.5-6.21l-46.81,10a8.07,8.07,0,0,0-6.15,9.57L139.79,107l62.46-13.42Z" opacity="0.2"></path>
+        <path d="M231.65,194.55,198.46,36.75a16,16,0,0,0-19-12.39L132.65,34.42a16.08,16.08,0,0,0-12.3,19l33.19,157.8A16,16,0,0,0,169.16,224a16.25,16.25,0,0,0,3.38-.36l46.81-10.06A16.09,16.09,0,0,0,231.65,194.55ZM136,50.15c0-.06,0-.09,0-.09l46.8-10,3.33,15.87L139.33,66Zm6.62,31.47,46.82-10.05,3.34,15.9L146,97.53Zm6.64,31.57,46.82-10.06,13.3,63.24-46.82,10.06ZM216,197.94l-46.8,10-3.33-15.87L212.67,182,216,197.85C216,197.91,216,197.94,216,197.94ZM104,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V48A16,16,0,0,0,104,32ZM56,48h48V64H56Zm0,32h48v96H56Zm48,128H56V192h48v16Z"></path>
+    </svg>
+    <h3 class="text-lg sm:text-2xl font-bold mb-4">Favorite Books</h3>
+    <div class="grid grid-cols-3 gap-4 sm:grid sm:grid-cols-5 sm:gap-4">
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/design-of-everyday-things.webp" type="image/webp">
+                <img src="/images/png/design-of-everyday-things.png" alt="The Design of Everyday Things" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium text-center text-normalLight dark:text-invertedLight">The Design of Everyday Things</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/dont-make-me-think.webp" type="image/webp">
+                <img src="/images/png/dont-make-me-think.png" alt="Don\'t Make Me Think" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Don\'t Make Me Think</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/this-is-marketing.webp" type="image/webp">
+                <img src="/images/png/this-is-marketing.png" alt="This is Marketing" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">This is Marketing</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/lean-startup.webp" type="image/webp">
+                <img src="/images/png/lean-startup.png" alt="The Lean Startup" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">The Lean Startup</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/cant-hurt-me.webp" type="image/webp">
+                <img src="/images/png/cant-hurt-me.png" alt="Can\'t Hurt Me" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Can\'t Hurt Me</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/meditations.webp" type="image/webp">
+                <img src="/images/png/meditations.png" alt="Meditations" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Meditations</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/fast-and-slow.webp" type="image/webp">
+                <img src="/images/png/fast-and-slow.png" alt="Thinking, Fast and Slow" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Thinking, Fast and Slow</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/creativity-inc.webp" type="image/webp">
+                <img src="/images/png/creativity-inc.png" alt="Creativity, Inc." class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Creativity, Inc.</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/atomic-habits.webp" type="image/webp">
+                <img src="/images/png/atomic-habits.png" alt="Atomic Habits" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">Atomic Habits</p>
+        </div>
+        <div class="flex flex-col gap-1">
+            <picture>
+                <source srcset="/images/art-of-war.webp" type="image/webp">
+                <img src="/images/png/art-of-war.png" alt="The Art of War" class="mb-1 max-w-full shadow-medium dark:shadow-mediumInverted">
+            </picture>
+            <p class="text-sm font-medium leading:tight text-center text-normalLight dark:text-invertedLight">The Art of War</p>
+        </div>
+    </div>
+</div>
+  '
+-%}
+
+
+<script>
+  window.addEventListener('load', () => {
+      // =============================
+      // 🕒 Time Display Optimization
+      // =============================
+      function updateTime() {
+          const now = new Date();
+          const options = { timeZone: 'Africa/Cairo', hour12: false };
+          const timeString = now.toLocaleTimeString('en-US', options);
+          const [hours, minutes, seconds] = timeString.split(':');
+  
+          document.getElementById('hours').textContent = hours.padStart(2, '0');
+          document.getElementById('minutes').textContent = minutes.padStart(2, '0');
+          document.getElementById('seconds').textContent = seconds.padStart(2, '0');
+      }
+  
+      setInterval(updateTime, 1000);
+      updateTime(); // Run immediately
+  
+      // =============================
+      // 🌍 Lazy Load the Globe (Only If Needed)
+      // =============================
+      const globeContainer = document.querySelector('.globe-embed');
+      if (globeContainer) {
+          const script = document.createElement('script');
+          script.src = 'https://cdn.jsdelivr.net/npm/three@0.138.1/build/three.min.js';
+          script.defer = true;
+          script.onload = () => {
+              // Load OrbitControls AFTER Three.js is available
+              const orbitScript = document.createElement('script');
+              orbitScript.src = 'https://cdn.jsdelivr.net/npm/three@0.138.1/examples/js/controls/OrbitControls.js';
+              orbitScript.defer = true;
+              orbitScript.onload = initGlobe; // Initialize globe after OrbitControls is loaded
+              document.body.appendChild(orbitScript);
+          };
+          document.body.appendChild(script);
+      }
+  
+      function initGlobe() {
+          const scene = new THREE.Scene();
+          scene.background = null;
+  
+          const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+          const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  
+          renderer.setSize(globeContainer.clientWidth, globeContainer.clientHeight);
+          renderer.setPixelRatio(window.devicePixelRatio);
+          globeContainer.appendChild(renderer.domElement);
+  
+          const texture = new THREE.TextureLoader().load('/images/globe-texture.jpg');
+          const globe = new THREE.Mesh(
+              new THREE.SphereGeometry(5, 64, 64),
+              new THREE.MeshStandardMaterial({ map: texture, roughness: 0.8, metalness: 0.2 })
+          );
+          scene.add(globe);
+  
+          const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+          scene.add(ambientLight);
+  
+          const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+          directionalLight.position.set(10, 10, 10);
+          scene.add(directionalLight);
+  
+          camera.position.set(0, 0, 12);
+          const controls = new THREE.OrbitControls(camera, renderer.domElement);
+          controls.enableDamping = true;
+          controls.enableZoom = false;
+  
+          let isUserInteracting = false;
+          let autoRotateTimeout;
+  
+          controls.addEventListener('start', () => {
+              isUserInteracting = true;
+              if (autoRotateTimeout) clearTimeout(autoRotateTimeout);
+          });
+  
+          controls.addEventListener('end', () => {
+              autoRotateTimeout = setTimeout(() => isUserInteracting = false, 1000);
+          });
+  
+          function animate() {
+              requestAnimationFrame(animate);
+              if (!isUserInteracting) globe.rotation.y += 0.001;
+              controls.update();
+              renderer.render(scene, camera);
+          }
+          animate();
+      }
+  });
+  </script>

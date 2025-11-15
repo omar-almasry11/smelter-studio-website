@@ -1,0 +1,118 @@
+<section class="py-16 px-[5%] {{ customClasses | default: '' }}">
+  <div class="container">
+    <div class="max-w-3xl mx-auto">
+      {% if header or subheader %}
+        <div class="mb-10">
+          {% if header %}
+            <div class="flex items-center">
+              <h2 class="leading-none">
+                {{ header | default: 'Default Header' }}
+              </h2>
+            </div>
+          {% endif %}
+          {% if subheader %}
+            <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
+              {{ subheader | default: 'Default Subheader' }}
+            </p>
+          {% endif %}
+        </div>
+      {% endif %}
+      <!-- Render Dynamic Collection -->
+      {% if collection %}
+        <!-- Check if this is a grid layout (for services) -->
+        {% if gridLayout %}
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {%- for item in collection limit: limit -%}
+              <div class="standard-card">
+                <!-- Service Icon -->
+                {% if item.data.cardIcon %}
+                  {{ item.data.cardIcon }}
+                {% endif %}
+                <!-- Light Mode Logo -->
+                {% if item.data.logo %}
+                  <img
+                    src="{{ item.data.logo }}"
+                    alt="Logo"
+                    width="64"
+                    height="64"
+                    class="mb-4 ratio-square object-contain dark:hidden {{ item.data.customLogoClass | default: '' }}"
+                  >
+                {% endif %}
+                <!-- Dark Mode Logo -->
+                {% if item.data['logo-dark'] %}
+                  <img
+                    src="{{ item.data.logo-dark }}"
+                    alt="Logo"
+                    width="64"
+                    height="64"
+                    class="hidden dark:block dark:ratio-square dark:object-contain dark:mb-4 dark:w-16 dark:h-16 {{ item.data.customLogoClass | default: '' }}"
+                  >
+                {% endif %}
+                <h3 class="font-bold mb-2">
+                  <a href="{{ item.url }}" class="no-underline">{{ item.data.title }}</a>
+                </h3>
+                {% if item.data.cardDescription %}
+                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">{{ item.data.cardDescription }}</p>
+                {% elsif item.data.description %}
+                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">{{ item.data.description }}</p>
+                {% endif %}
+
+                <div class="mt-auto">
+                  {% if item.data.ctaText and item.data.ctaUrl %}
+                    {% render 'partials/text-link', url: item.data.ctaUrl, label: item.data.ctaText %}
+                  {% else %}
+                    {% render 'partials/text-link', url: item.url, label: 'Learn more' %}
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <!-- Default single column layout -->
+          <div class="flex-col space-y-4">
+            {%- for item in collection limit: limit -%}
+              <div class="standard-card">
+                <!-- Light Mode Logo -->
+                {% if item.data.logo %}
+                  <img
+                    src="{{ item.data.logo }}"
+                    alt="Logo"
+                    width="64"
+                    height="64"
+                    class="mb-4 ratio-square object-contain dark:hidden {{ item.data.customLogoClass | default: '' }}"
+                  >
+                {% endif %}
+                <!-- Dark Mode Logo -->
+                {% if item.data['logo-dark'] %}
+                  <img
+                    src="{{ item.data.logo-dark }}"
+                    alt="Logo"
+                    width="64"
+                    height="64"
+                    class="hidden dark:block dark:ratio-square dark:object-contain dark:mb-4 dark:w-16 dark:h-16 {{ item.data.customLogoClass | default: '' }}"
+                  >
+                {% endif %}
+                <h3 class="font-bold mb-2">
+                  <a href="{{ item.url }}" class="no-underline">{{ item.data.title }}</a>
+                </h3>
+                {% if item.data.description %}
+                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">{{ item.data.description }}</p>
+                {% endif %}
+
+                {% render 'partials/text-link', url: item.url, label: 'Read more' %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if collectionLink %}
+          <div class="mt-6 flex justify-end">
+            {%- render 'partials/text-link', url: collectionLink, label: 'View all posts', customClasses: 'mt-10' -%}
+          </div>
+        {% endif %}
+      {% else %}
+        <!-- Render Static Content -->
+        {{ content }}
+      {% endif %}
+    </div>
+  </div>
+</section>

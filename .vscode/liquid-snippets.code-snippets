@@ -1,0 +1,59 @@
+{
+	"Render Button Partial": {
+	  "prefix": "renderbutton",
+	  "body": [
+		"{%- render 'partials/button', ",
+		"  text: '${1:Click Me}',",
+		"  icon: '${2}',",
+		"  iconPosition: '${3}',",
+		"  type: '${4:button}',",
+		"  variant: '${5}',",
+		"  ariaLabel: '${6}',",
+		"  ariaExpanded: '${7}' ",
+		"-%}"
+	  ],
+	  "description": "Insert a button partial with all options"
+	},
+
+	"Render Section Standard": {
+    "prefix": "rendersection",
+    "body": [
+      "{%- render 'partials/section-standard', ",
+      "  header: '${1:Default Header}',",
+      "  subheader: '${2:Default Subheader}',",
+      "  content: '${3:<p>Default Content</p>}',",
+      "  collection: ${4:collections.posts},",
+      "  limit: ${5:3},",
+      "  collectionLink: '${6:/collection-url/}',",
+      "  collectionName: '${7:Collection Name}',",
+      "  customClasses: '${8:custom-css-classes}'",
+      "-%}"
+    ],
+    "description": "Insert a section-standard render with all options"
+},
+
+"Render Text Link": {
+  "prefix": "rendertextlink",
+  "body": [
+    "{%- render 'partials/text-link',",
+    "  url: '${1:#}',",
+    "  label: '${2:Read more}',",
+    "  icon: '${3:}',",
+    "  customClasses: '${4:}'",
+    "-%}"
+  ],
+  "description": "Insert a text link with an optional icon"
+},
+
+"Render Page Header": {
+  "prefix": "renderpageheader",
+  "body": [
+    "{%- render 'partials/page-header',",
+    "  headerTitle: '${1:}',",
+    "  headerSubtitle: '${2:}',",
+    "-%}"
+  ],
+  "description": "Insert a standard page header"
+}
+  }
+  

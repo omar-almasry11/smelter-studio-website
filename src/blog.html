@@ -1,0 +1,14 @@
+---
+layout: layouts/layout.liquid
+title: "Blog"
+---
+
+{%- render 'partials/page-header',
+  headerTitle: 'Blog',
+  headerSubtitle: 'Reflections on design, code, and everyday insights from my work.',
+-%}
+
+{%- render 'partials/section-standard', 
+  collection: collections.posts,
+-%}
+

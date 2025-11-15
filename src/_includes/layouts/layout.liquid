@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="{{ description | default: 'The Personal Website of Omar Almasry: An Independent UX Engineer' }}"
+    >
+    <meta name="author" content="Omar Almasry">
+    <title>{{ title | default: 'Omar Almasry Portfolio' }}</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/png/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/png/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512.png">    
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="{{ title | default: "Omar Almasry\s Personal Website" }}">
+    <meta
+      property="og:description"
+      content="{{ description | default: 'Showcasing scalable, high-performance websites optimized for enterprises.' }}"
+    >
+    <meta property="og:image" content="{{ og_image | default: '/images/png/og.png' }}">
+    <meta property="og:url" content="{{ page_url | default: 'https://omaralmasry.com' }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title | default: "Omar Almasry\'s Portfolio" }}">
+    <meta
+      name="twitter:description"
+      content="{{ description | default: 'Crafting accessible, high-performance websites and digital products. UX Engineer helping brands deliver seamless user experiences.' }}"
+    >
+    <meta name="twitter:image" content="{{ og_image | default: '/images/png/og.png' }}">
+
+    <!-- Robots Meta -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Stylesheet -->
+    <link href="/dist/output.css" rel="stylesheet">
+  </head>
+  <body>
+    {% render 'partials/navbar', page: page %}
+    <main>
+      {{ content }}
+    </main>
+    {% render 'partials/footer' %}
+
+    <!-- JavaScript -->
+    <script src="/scripts/main.js" defer></script>
+  </body>
+</html>

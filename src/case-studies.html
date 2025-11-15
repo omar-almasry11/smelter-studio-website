@@ -1,0 +1,15 @@
+---
+layout: layouts/layout.liquid
+title: Case Studies
+---
+
+{%- render 'partials/page-header',
+  headerTitle: 'Case Studies',
+  headerSubtitle: 'I like to document different projects I work on.',
+-%}
+
+{%- render 'partials/section-standard', 
+  header: 'Default Header',
+  subheader: 'Default Subheader',
+  collection: collections.caseStudies,
+-%}

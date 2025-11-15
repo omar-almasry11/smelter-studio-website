@@ -1,0 +1,42 @@
+---
+layout: "/layouts/layout.liquid"
+---
+<header class="pt-16 pb-4 px-[5%] mx-auto flex items-center min-screen">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <!-- Left Column: Project Name and Description -->
+      <div>
+        <h1>{{ title }}</h1>
+        <p class="text-md mb-6 lg:text-lg text-normalLight dark:text-invertedLight">
+          {{ header-overview }}
+        </p>
+        {% if project-link %}
+          {%- render 'partials/text-link',
+            url: '{{ project-link }}',
+            label: 'View live website',
+            icon: '<svg xmlns="http://www.w3.org/2000/svg" 
+          class="w-4 h-4 fill-current" 
+          role="img" 
+          aria-label="arrow" 
+          viewBox="0 0 256 256">
+           <path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z">
+           </path>  
+             </svg>',
+            customClasses: 'mt-8'
+          -%}
+        {% endif %}
+      </div>
+      <!-- Right Column: Placeholder for Image -->
+      <div class="aspect-video rounded-lg flex items-center justify-center">
+        <img src="{{ header-img }}" width="100%" height="auto" class="w-full h-auto max-h-[550px] object-cover object-top shadow-low dark:shadow-lowInverted">
+      </div>
+    </div>
+  </div>
+</header>
+<section class="prose py-12 px-[5%]">
+  <div class="container mx-auto">
+    <article class="prose">
+      {{ content }}
+    </article>
+  </div>
+</section>

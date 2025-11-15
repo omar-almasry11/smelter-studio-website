@@ -1,0 +1,125 @@
+
+{
+  "websiteRedesign": [
+    {
+      "question": "How long does a typical website redesign take?",
+      "answer": "Most website redesign projects take 6-12 weeks, depending on the complexity and scope. This includes discovery, design, development, testing, and launch phases. I'll provide a detailed timeline specific to your project during our initial consultation."
+    },
+    {
+      "question": "Will my website be down during the redesign process?",
+      "answer": "No, your current website will remain live and functional throughout the entire redesign process. I develop the new site in a staging environment, and we only switch over once everything is thoroughly tested and approved. The actual migration typically takes just a few hours with minimal downtime."
+    },
+    {
+      "question": "Can you help migrate my content from my old website?",
+      "answer": "Absolutely! Content migration is a core part of my redesign service. I can migrate your existing content, optimize it for better SEO, and ensure everything is properly formatted in your new design. I also help identify opportunities to improve and update content during the process."
+    },
+    {
+      "question": "What happens to my SEO rankings during a redesign?",
+      "answer": "I take great care to preserve and improve your SEO during the redesign process. This includes proper 301 redirects, maintaining URL structure where possible, optimizing page speed, and ensuring all technical SEO elements are properly implemented. Most clients see improved rankings after launch."
+    },
+    {
+      "question": "Do you provide training on how to manage my new website?",
+      "answer": "Yes! I provide comprehensive training on your new content management system, including how to add/edit content, manage images, and perform basic maintenance tasks. I also provide documentation and am available for ongoing support questions."
+    },
+    {
+      "question": "What if I need changes after the website launches?",
+      "answer": "I provide 30 days of complimentary post-launch support to address any issues or minor adjustments. For ongoing maintenance, content updates, or additional features, I offer flexible support packages tailored to your needs."
+    }
+  ],
+  "accessibilityAudits": [
+    {
+      "question": "What accessibility standards do you test against?",
+      "answer": "I conduct comprehensive audits against WCAG 2.1 Level AA standards, which are the internationally recognized guidelines for web accessibility. For Canadian clients, I also ensure compliance with AODA (Accessibility for Ontarians with Disabilities Act) requirements."
+    },
+    {
+      "question": "How long does an accessibility audit take?",
+      "answer": "A typical accessibility audit takes 1-2 weeks depending on the size and complexity of your website. This includes automated testing, manual review, assistive technology testing, and preparation of a detailed remediation report."
+    },
+    {
+      "question": "Do you fix the accessibility issues you find?",
+      "answer": "Yes! I provide both audit and remediation services. After identifying issues, I can implement the necessary fixes to bring your website into compliance. I also provide training to your team to maintain accessibility standards going forward."
+    }
+  ],
+  "customCMS": [
+    {
+      "question": "Which CMS platforms do you specialize in?",
+      "answer": "I specialize in modern, flexible CMS solutions including Webflow, Contentful, Sanity, and custom headless CMS implementations. The choice depends on your specific needs, technical requirements, and content management preferences."
+    },
+    {
+      "question": "Can you migrate from my current CMS?",
+      "answer": "Yes, I can help migrate your content and data from virtually any existing CMS platform. This includes WordPress, Drupal, Joomla, legacy systems, and proprietary solutions. I ensure data integrity and minimal disruption during the migration process."
+    },
+    {
+      "question": "How do you ensure the CMS is user-friendly for my team?",
+      "answer": "I design custom CMS interfaces with your team's workflow in mind. This includes intuitive content editing experiences, custom field types, automated workflows, and comprehensive user training. The goal is to make content management as simple and efficient as possible."
+    }
+  ],
+  "designSprints": [
+  {
+    "question": "What is a startup website design sprint?",
+    "answer": "It’s a focused 2-week process designed to take your startup from idea to a fully functional, conversion-ready website. Instead of dragging out the process for months, we move quickly and launch something real that you can test and grow with."
+  },
+  {
+    "question": "How much does a startup website design sprint cost?",
+    "answer": "The cost for 1 page website starts from $2,500, and for a 3-5 page website it starts from $4,500."
+  },
+  {
+    "question": "What deliverables will I receive?",
+    "answer": "By the end of the sprint, you’ll have a fully launched Webflow website, optimized for both desktop and mobile, complete with tailored UX/UI design, conversion-focused structure, and technical performance enhancements. You’ll also receive guidance on content and messaging to ensure your site communicates clearly."
+  },
+  {
+    "question": "How long does the process take?",
+    "answer": "Most startups complete the sprint in 2 weeks. This includes structured phases for design, development, and launch. If your project has additional custom features, I'll let you know upfront if more time is needed."
+  },
+  {
+    "question": "Do I need to prepare anything before starting?",
+    "answer": "Yes—having your brand assets (logo, colors, fonts), any existing content, and clarity on your core offer will speed things up. If you don’t have finalized copy, I’ll provide structure and polish to get your messaging ready for launch."
+  },
+  {
+    "question": "Can we make changes after launch?",
+    "answer": "Absolutely. The sprint gives you a strong foundation, but your website can grow with you. I can provide ongoing support, or you can manage updates internally—Webflow makes it simple to edit content without needing code."
+  },
+  {
+    "question": "Do you also handle copywriting?",
+    "answer": "I provide guidance and refinement on your website’s messaging to ensure it’s clear and conversion-focused. For startups that need full copywriting support, I can recommend partner copywriters who specialize in brand storytelling."
+  },
+  {
+    "question": "What tools do you use?",
+    "answer": "I build and launch all websites in Webflow, and the wireframing and design phase is done in Figma. Collaborative feedback is handled through Loom videos, live calls, and project management tools. This keeps the process transparent and efficient."
+  },
+  {
+    "question": "Is this right for my startup?",
+    "answer": "If you need a professional, fast, and scalable website to validate your product, attract investors, or start selling, this sprint is designed for you. It’s not ideal for companies who want a months-long traditional agency process."
+  }
+],
+  "speedOptimization": [
+    {
+      "question": "How much faster will my website become?",
+      "answer": "Most websites see 50-80% improvement in loading times after optimization. Typical results include reducing load times from 8-12 seconds to 2-4 seconds, dramatically improving user experience and conversions. I provide detailed before/after metrics to show exact improvements."
+    },
+    {
+      "question": "Will speed optimization affect my website's design or functionality?",
+      "answer": "No, speed optimization focuses on technical improvements that don't change your website's visual design or functionality. I optimize behind-the-scenes elements like code, images, and server response times while preserving your site's look and user experience."
+    },
+    {
+      "question": "How long does the speed optimization process take?",
+      "answer": "Most speed optimization projects take 1-2 weeks depending on your site's complexity and current performance issues. This includes the initial audit, implementation of optimizations, testing, and performance validation across different devices and browsers."
+    },
+    {
+      "question": "What tools do you use to measure website speed?",
+      "answer": "I use industry-standard tools including Google PageSpeed Insights, GTmetrix, WebPageTest, and Core Web Vitals metrics. These provide comprehensive analysis of loading performance, user experience metrics, and SEO impact. You'll receive detailed reports showing improvements."
+    },
+    {
+      "question": "Will speed optimization help my SEO rankings?",
+      "answer": "Absolutely! Site speed is a confirmed Google ranking factor, and Core Web Vitals are increasingly important for SEO. Faster websites typically see improved search rankings, lower bounce rates, and better user engagement signals that boost overall SEO performance."
+    },
+    {
+      "question": "Can you optimize e-commerce websites with lots of product images?",
+      "answer": "Yes, e-commerce sites often see the biggest improvements from speed optimization! I specialize in optimizing product images, implementing lazy loading for large catalogs, and optimizing checkout flows. These improvements typically lead to higher conversion rates and reduced cart abandonment."
+    },
+    {
+      "question": "Do you provide a performance guarantee?",
+      "answer": "While every website is different, I guarantee measurable improvement in your site's loading speed and Core Web Vitals scores. If you're not satisfied with the performance improvements achieved, I'll work with you until we reach acceptable performance levels or provide a full refund."
+    }
+  ]
+}

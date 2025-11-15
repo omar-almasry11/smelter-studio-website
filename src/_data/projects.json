@@ -1,0 +1,71 @@
+{
+  "startupSprints": [
+    {
+      "title": "248.ai",
+      "image": "/images/248-screencapture.png",
+      "url": "https://www.248.ai/"
+    },
+    {
+      "title": "Salney",
+      "image": "/images/salney-screencapture.png",
+      "url": "https://www.salney.com/"
+    },
+    {
+      "title": "Meezy",
+      "image": "/images/meezy-screencapture.png",
+      "url": "https://meezy-lp.webflow.io/"
+    }
+  ],
+  "speedOptimization": [
+    {
+      "title": "E-commerce Website - Before",
+      "description": "E-commerce website performance before optimization",
+      "image": "/images/png/speed-optimization-1-a.webp"
+    },
+    {
+      "title": "E-commerce Website - After",
+      "description": "E-commerce website performance after optimization",
+      "image": "/images/png/speed-optimization-1-b.webp"
+    },
+    {
+      "title": "Corporate Website - Before", 
+      "description": "Corporate website performance before optimization",
+      "image": "/images/png/speed-optimization-2-a.webp"
+    },
+    {
+      "title": "Corporate Website - After", 
+      "description": "Corporate website performance after optimization",
+      "image": "/images/png/speed-optimization-2-b.webp"
+    },
+    {
+      "title": "Webflow Site - Before",
+      "description": "Webflow website performance before optimization",
+      "image": "/images/png/speed-optimization-3-a.webp"
+    },
+    {
+      "title": "Webflow Site - After",
+      "description": "Webflow website performance after optimization",
+      "image": "/images/png/speed-optimization-3-b.webp"
+    },
+    {
+      "title": "Service-Based Website - Before",
+      "description": "Service-based website performance before optimization",
+      "image": "/images/png/speed-optimization-4-a.webp"
+    },
+    {
+      "title": "Service-Based Website - After",
+      "description": "Service-based website performance after optimization",
+      "image": "/images/png/speed-optimization-4-b.webp"
+    },
+    {
+      "title": "Content-Heavy Website - Before",
+      "description": "Content-heavy website performance before optimization",
+      "image": "/images/png/speed-optimization-5a.webp"
+    },
+    {
+      "title": "Content-Heavy Website - After",
+      "description": "Content-heavy website performance after optimization",
+      "image": "/images/png/speed-optimization-5b.webp"
+    }
+  ]
+}

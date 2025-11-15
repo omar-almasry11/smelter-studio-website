@@ -1,0 +1,435 @@
+---
+layout: layouts/layout.liquid
+title: Client Brief - Omar Almasry
+description: Share details about your project so we can determine if we're a good match and I can provide you with an accurate proposal.
+---
+
+<div class="min-h-svh mx-auto px-[5%] py-24">
+  <div class="max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl sm:text-6xl font-extrabold mb-4">Project Questionnaire</h1>
+      <p class="text-xl text-normalLight dark:text-invertedLight max-w-2xl mx-auto">
+        Thanks for taking the time to complete this questionnaire. The more detail you share, the better I can scope the project and design and build a solution that works for your business.
+      </p>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="mb-8">
+      <div class="flex items-center justify-between max-w-lg mx-auto">
+        <div class="flex items-center">
+          <div class="step-indicator active flex items-center justify-center w-8 h-8 rounded-full bg-primary text-inverted text-sm font-bold dark:bg-primaryInverted dark:text-normal" data-step="1">1</div>
+          <span class="ml-2 text-sm font-medium step-label">Contact Info</span>
+        </div>
+        <div class="flex-1 h-1 mx-3 bg-primary/20 dark:bg-primaryInverted/20 step-line" data-line="1"></div>
+        <div class="flex items-center">
+          <div class="step-indicator flex items-center justify-center w-8 h-8 rounded-full bg-normal dark:bg-inverted text-normalLight dark:text-invertedLight text-sm font-bold" data-step="2">2</div>
+          <span class="ml-2 text-sm font-medium step-label text-normalLight dark:text-invertedLight">Business Info</span>
+        </div>
+        <div class="flex-1 h-1 mx-3 bg-primary/20 dark:bg-primaryInverted/20 step-line" data-line="2"></div>
+        <div class="flex items-center">
+          <div class="step-indicator flex items-center justify-center w-8 h-8 rounded-full bg-normal dark:bg-inverted text-normalLight dark:text-invertedLight text-sm font-bold" data-step="3">3</div>
+          <span class="ml-2 text-sm font-medium step-label text-normalLight dark:text-invertedLight">Project Info</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Container -->
+    <div class="standard-card max-w-2xl mx-auto">
+      <!-- Success Message (Hidden by default) -->
+      <div id="successMessage" class="hidden text-center py-12">
+        <div class="mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 mx-auto text-primary dark:text-primaryInverted" fill="currentColor" viewBox="0 0 256 256">
+            <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm49.53,85.79-58.67,56a8,8,0,0,1-11.06,0l-29.33-28a8,8,0,0,1,11.06-11.58l23.8,22.7,53.14-50.69a8,8,0,1,1,11.06,11.58Z"></path>
+          </svg>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Thank You!</h2>
+        <p class="text-xl text-normalLight dark:text-invertedLight mb-6">
+          Your project brief has been submitted successfully. I've received your information and will review it carefully.
+        </p>
+        <p class="text-lg text-normalLight dark:text-invertedLight">
+          I'll get back to you within 1-2 business days with next steps and any follow-up questions.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form 
+        id="clientBriefForm" 
+        name="client-brief" 
+        method="POST" 
+        data-netlify="true" 
+        data-netlify-honeypot="bot-field"
+        class="space-y-8 w-full"
+      >
+        <!-- Honeypot field for spam protection -->
+        <input type="hidden" name="form-name" value="client-brief" />
+        <div class="hidden">
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </div>
+
+        <!-- Step 1: Contact Information -->
+        <div class="form-step active" data-step="1">
+          <h2 class="text-3xl font-bold mb-6">Contact Information</h2>
+          
+          <div class="space-y-6">
+            <div>
+              <label for="fullName" class="block text-lg font-medium mb-2">
+                Full Name <span class="text-primary dark:text-primaryInverted">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="fullName" 
+                name="fullName" 
+                required 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition"
+                placeholder="John Smith"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-lg font-medium mb-2">
+                Email Address <span class="text-primary dark:text-primaryInverted">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition"
+                placeholder="john@company.com"
+              />
+            </div>
+
+            <div>
+              <label for="website" class="block text-lg font-medium mb-2">
+                Existing Website URL <span class="text-normalLight dark:text-invertedLight text-sm">(Optional)</span>
+              </label>
+              <input 
+                type="text" 
+                id="website" 
+                name="website" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition"
+                placeholder="https://yourwebsite.com"
+              />
+            </div>
+          </div>
+
+          <div class="flex justify-end mt-8 w-full">
+            <button 
+              type="button" 
+              class="btn-next px-8 py-3 bg-primary dark:bg-primaryInverted text-inverted dark:text-normal font-bold rounded-md hover:opacity-90 transition shadow-low dark:shadow-lowInverted"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Business & Audience -->
+        <div class="form-step" data-step="2">
+          <h2 class="text-3xl font-bold mb-2">Your Business & Audience</h2>
+          <p class="text-normalLight dark:text-invertedLight mb-6">Section A of 2</p>
+          
+          <div class="space-y-6">
+            <div>
+              <label for="targetAudience" class="block text-lg font-medium mb-2">
+                1. Who is your target audience?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                Describe your ideal customer (role, industry, company size, location, etc.)
+              </p>
+              <textarea 
+                id="targetAudience" 
+                name="targetAudience" 
+                rows="4" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="E.g., Marketing directors at mid-size B2B SaaS companies in North America..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="coreOffer" class="block text-lg font-medium mb-2">
+                2. What is your core offer?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                Briefly describe your main product(s) or service(s)
+              </p>
+              <textarea 
+                id="coreOffer" 
+                name="coreOffer" 
+                rows="4" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="Describe what you sell or provide..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="differentiators" class="block text-lg font-medium mb-2">
+                3. What makes your business stand out from others in your niche?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                Any key differentiators, proof, or results you're proud of
+              </p>
+              <textarea 
+                id="differentiators" 
+                name="differentiators" 
+                rows="4" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="What makes you unique or better..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="customerProblems" class="block text-lg font-medium mb-2">
+                4. What problems or challenges do customers come to you to solve?
+              </label>
+              <textarea 
+                id="customerProblems" 
+                name="customerProblems" 
+                rows="4" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="What pain points do you address..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="competitors" class="block text-lg font-medium mb-2">
+                5. Who are your direct competitors?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                Please share names and/or links
+              </p>
+              <textarea 
+                id="competitors" 
+                name="competitors" 
+                rows="3" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="Competitor names or websites..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="alternatives" class="block text-lg font-medium mb-2">
+                6. Are there any alternative options your customers consider instead of you?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                (DIY, different type of service, another tool, etc.)
+              </p>
+              <textarea 
+                id="alternatives" 
+                name="alternatives" 
+                rows="3" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="What else might they consider..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="flex justify-between mt-8">
+            <button 
+              type="button" 
+              class="btn-prev px-8 py-3 border-2 border-normal dark:border-inverted text-normal dark:text-inverted font-bold rounded-md hover:bg-normal hover:dark:bg-inverted transition"
+            >
+              Previous
+            </button>
+            <button 
+              type="button" 
+              class="btn-next px-8 py-3 bg-primary dark:bg-primaryInverted text-inverted dark:text-normal font-bold rounded-md hover:opacity-90 transition shadow-low dark:shadow-lowInverted"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 3: Website & Project -->
+        <div class="form-step" data-step="3">
+          <h2 class="text-3xl font-bold mb-2">Your Website & Project</h2>
+          <p class="text-normalLight dark:text-invertedLight mb-6">Section B of 2</p>
+          
+          <div class="space-y-6">
+            <div>
+              <label for="websiteGoals" class="block text-lg font-medium mb-2">
+                7. What are the main goals for this website?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                Examples: generate leads, book demos, recruit talent, explain a new product, etc.
+              </p>
+              <textarea 
+                id="websiteGoals" 
+                name="websiteGoals" 
+                rows="4" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="Primary goals for the website..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="visitorActions" class="block text-lg font-medium mb-2">
+                8. What do you want visitors to do on the site?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                Primary and secondary calls to action
+              </p>
+              <textarea 
+                id="visitorActions" 
+                name="visitorActions" 
+                rows="4" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="Fill out a contact form, schedule a call, download a guide..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="requiredPages" class="block text-lg font-medium mb-2">
+                9. What pages do you need for this project?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                E.g., Home, About, Services, Pricing, Careers, Blog, etc.
+              </p>
+              <textarea 
+                id="requiredPages" 
+                name="requiredPages" 
+                rows="3" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="List all pages you need..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="functionality" class="block text-lg font-medium mb-2">
+                10. Do you need any special functionality or integrations?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                Examples: CMS for blog/case studies, forms/CRM, booking tool, job board, memberships, etc.
+              </p>
+              <textarea 
+                id="functionality" 
+                name="functionality" 
+                rows="4" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="Any special features or integrations..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="brandAssets" class="block text-lg font-medium mb-2">
+                11. Do you already have brand assets?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                Logo, color palette, typography, imagery, brand guidelines
+              </p>
+              <textarea 
+                id="brandAssets" 
+                name="brandAssets" 
+                rows="3" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="Describe what brand assets you have..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label class="block text-lg font-medium mb-2">
+                12. What is the status of your content?
+              </label>
+              <div class="space-y-3">
+                <label class="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="contentStatus" 
+                    value="Already written" 
+                    class="w-5 h-5 text-primary dark:text-primaryInverted focus:ring-primary dark:focus:ring-primaryInverted"
+                  />
+                  <span class="ml-3 text-lg">Already written</span>
+                </label>
+                <label class="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="contentStatus" 
+                    value="Needs light editing" 
+                    class="w-5 h-5 text-primary dark:text-primaryInverted focus:ring-primary dark:focus:ring-primaryInverted"
+                  />
+                  <span class="ml-3 text-lg">Needs light editing</span>
+                </label>
+                <label class="flex items-center cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="contentStatus" 
+                    value="Needs to be created from scratch" 
+                    class="w-5 h-5 text-primary dark:text-primaryInverted focus:ring-primary dark:focus:ring-primaryInverted"
+                  />
+                  <span class="ml-3 text-lg">Needs to be created from scratch</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label for="websiteInspirations" class="block text-lg font-medium mb-2">
+                13. Are there any websites you really like?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                Please share 2-3 links and what you like about them (design, messaging, structure, etc.)
+              </p>
+              <textarea 
+                id="websiteInspirations" 
+                name="websiteInspirations" 
+                rows="4" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="Share website URLs and what you like about them..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="budget" class="block text-lg font-medium mb-2">
+                14. What is your budget for this project?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                This helps me suggest the best approach and options
+              </p>
+              <textarea 
+                id="budget" 
+                name="budget" 
+                rows="2" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="Your budget range..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="successMetrics" class="block text-lg font-medium mb-2">
+                15. How will you measure success 3-6 months after launch?
+              </label>
+              <p class="text-sm text-normalLight dark:text-invertedLight mb-2">
+                E.g., # of leads, demo bookings, applicants, traffic, etc.
+              </p>
+              <textarea 
+                id="successMetrics" 
+                name="successMetrics" 
+                rows="3" 
+                class="form-input w-full px-4 py-3 border border-normal dark:border-inverted rounded-md bg-normal dark:bg-inverted focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primaryInverted transition resize-y"
+                placeholder="How you'll measure success..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="flex justify-between mt-8">
+            <button 
+              type="button" 
+              class="btn-prev px-8 py-3 border-2 border-normal dark:border-inverted text-normal dark:text-inverted font-bold rounded-md hover:bg-normal hover:dark:bg-inverted transition"
+            >
+              Previous
+            </button>
+            <button 
+              type="submit" 
+              class="btn-submit px-8 py-3 bg-primary dark:bg-primaryInverted text-inverted dark:text-normal font-bold rounded-md hover:opacity-90 transition shadow-low dark:shadow-lowInverted"
+            >
+              Submit Brief
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Load the multi-step form script -->
+<script src="/scripts/client-brief.js" defer></script>
+

@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="The Personal Website of Omar Almasry: An Independent UX Engineer"
+    >
+    <meta name="author" content="Omar Almasry">
+    <title>Blog</title>
+
+    <!-- Favicons -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/png/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/png/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512.png">    
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Blog">
+    <meta
+      property="og:description"
+      content="Showcasing scalable, high-performance websites optimized for enterprises."
+    >
+    <meta property="og:image" content="/images/png/og.png">
+    <meta property="og:url" content="https://omaralmasry.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog">
+    <meta
+      name="twitter:description"
+      content="Crafting accessible, high-performance websites and digital products. UX Engineer helping brands deliver seamless user experiences."
+    >
+    <meta name="twitter:image" content="/images/png/og.png">
+
+    <!-- Robots Meta -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Stylesheet -->
+    <link href="/dist/output.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="px-[5%] py-4 sticky top-0 bg-normal/60 z-50 backdrop-blur-sm dark:bg-inverted/60">
+  <!-- Progress Bar -->
+  <div id="progressBarContainer" class="absolute top-0 left-0 h-1 w-full bg-transparant">
+    <div id="progressBar" class="h-1 bg-primary w-0 dark:bg-primaryInverted"></div>
+  </div>
+  <div class="flex items-center justify-between container mx-auto">
+    <!-- Logo -->
+    <a href="/" class="flex items-center font-bold text-lg no-underline group">
+      <h3 class="flex items-center">
+        <span class="text-4xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted">O</span>
+        <span class="text-4xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight">.</span>
+      </h3>
+    </a>    
+
+    <!-- Navigation Links & Button -->
+    <div class="flex items-center space-x-4">
+      <ul class="flex items-center space-x-4">
+        <li>
+          <a
+            href="/about/"
+            class="text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+                      
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="/blog/"
+            class="text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
+            aria-current="page"
+          >
+            Blog
+          </a>
+        </li>
+      </ul>
+      
+  <a 
+    href="mailto:hello@omaralmasry.com"
+    class="flex mr-auto ml-auto px-5 py-2 bg-primary text-lg text-inverted font-medium rounded-lg shadow-low no-underline transition duration-300 hover:bg-inverted hover:text-inverted dark:bg-primaryInverted dark:text-normal dark:hover:bg-normal dark:hover:text-normal dark:shadow-lowInverted focus:ring focus:ring-blue-300"
+    aria-label="Contact"
+  >
+    <span>Contact</span>
+    <span class="ml-2">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="22" height="22" fill="currentColor" viewBox="0 0 256 256"><path d="M184,213.27A80,80,0,0,1,74.7,184l-40-69.32a20,20,0,0,1,34.64-20L55.08,70A20,20,0,0,1,89.73,50l6.92,12h0a20,20,0,0,1,34.64-20l30,52A20,20,0,0,1,196,74l17.31,30A80,80,0,0,1,184,213.27Z" opacity="0.2"></path><path d="M220.17,100,202.86,70a28,28,0,0,0-38.24-10.25,27.69,27.69,0,0,0-9,8.34L138.2,38a28,28,0,0,0-48.48,0A28,28,0,0,0,48.15,74l1.59,2.76A27.67,27.67,0,0,0,38,80.41a28,28,0,0,0-10.24,38.25l40,69.32a87.47,87.47,0,0,0,53.43,41,88.56,88.56,0,0,0,22.92,3,88,88,0,0,0,76.06-132Zm-6.66,62.64A72,72,0,0,1,81.62,180l-40-69.32a12,12,0,0,1,20.78-12L81.63,132a8,8,0,1,0,13.85-8L62,66A12,12,0,1,1,82.78,54L114,108a8,8,0,1,0,13.85-8L103.57,58h0a12,12,0,1,1,20.78-12l33.42,57.9a48,48,0,0,0-5.54,60.6,8,8,0,0,0,13.24-9A32,32,0,0,1,172.78,112a8,8,0,0,0,2.13-10.4L168.23,90A12,12,0,1,1,189,78l17.31,30A71.56,71.56,0,0,1,213.51,162.62ZM184.25,31.71A8,8,0,0,1,194,26a59.62,59.62,0,0,1,36.53,28l.33.57a8,8,0,1,1-13.85,8l-.33-.57a43.67,43.67,0,0,0-26.8-20.5A8,8,0,0,1,184.25,31.71ZM80.89,237a8,8,0,0,1-11.23,1.33A119.56,119.56,0,0,1,40.06,204a8,8,0,0,1,13.86-8,103.67,103.67,0,0,0,25.64,29.72A8,8,0,0,1,80.89,237Z"></path></svg>
+    </span>
+  </a>
+
+      
+
+      <!-- Dark Mode Toggle -->
+      <button id="themeToggle" class="px-2 py-2 bg-inverted rounded shadow-low dark:shadow-lowInveted dark:bg-normal">
+        <span class="sr-only">Toggle dark mode</span>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5 fill-current text-primaryInverted hover:text-inverted block dark:hidden"
+          role="img"
+          aria-label="Dark Mode"
+          viewBox="0 0 256 256"
+        >
+          <path d="M227.89,147.89A96,96,0,1,1,108.11,28.11,96.09,96.09,0,0,0,227.89,147.89Z" opacity="0.2"></path><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
+        </svg>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-5 h-5 fill-current text-normal dark:hover:text-invertedLight hidden dark:block"
+          role="img"
+          aria-label="Light Mode"
+          viewBox="0 0 256 256"
+        >
+          <path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+    <main>
+      <section class="py-20 px-[5%]">
+  <div class="container">
+  <div class="max-w-3xl mx-auto">
+    <!-- Main Heading -->
+    <h1 class="mb-6">
+      Blog
+    </h1>
+    
+      <!-- Supporting Text -->
+      <p class="text-2xl text-normalLight max-w-2xl ml-0 text-normalLight dark:text-invertedLight">
+        Reflections on design, code, and everyday insights from my work.
+      </p>
+    
+  </div>
+  </div>
+</section>
+<section class="py-16 px-[5%] ">
+  <div class="container">
+    <div class="max-w-3xl mx-auto">
+      
+      <!-- Render Dynamic Collection -->
+      
+        <!-- Check if this is a grid layout (for services) -->
+        
+          <!-- Default single column layout -->
+          <div class="flex-col space-y-4"><div class="standard-card">
+                <!-- Light Mode Logo -->
+                
+                <!-- Dark Mode Logo -->
+                
+                <h3 class="font-bold mb-2">
+                  <a href="/blog/Webflow for Enterprise Clients: A Deep Dive/" class="no-underline">Webflow for Enterprise Clients: A Deep Dive</a>
+                </h3>
+                
+                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Webflow is a great choice for startups and small businesses, but is it the right fit for enterprises? Let's explore the pros, cons, and risks of committing to Webflow Enterprise.</p>
+                
+
+                <a href="/blog/Webflow for Enterprise Clients: A Deep Dive/" class="flex text-lg items-center gap-2 ">
+  Read more
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
+     <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
+     </path>  
+    </svg>
+</a>
+
+              </div>
+            <div class="standard-card">
+                <!-- Light Mode Logo -->
+                
+                <!-- Dark Mode Logo -->
+                
+                <h3 class="font-bold mb-2">
+                  <a href="/blog/Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success/" class="no-underline">Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success</a>
+                </h3>
+                
+                  <p class="mb-6 text-md text-normalLight dark:text-invertedLight">Building Arabic-friendly websites requires more than `dir="rtl"`. Learn how to create scalable RTL design systems for enterprise success.</p>
+                
+
+                <a href="/blog/Building Scalable RTL Design Systems for Arabic Websites: Strategies for Enterprise Success/" class="flex text-lg items-center gap-2 ">
+  Read more
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" role="img" aria-label="arrow" viewBox="0 0 256 256">
+     <path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z">
+     </path>  
+    </svg>
+</a>
+
+              </div>
+            
+          </div>
+        
+        
+      
+    </div>
+  </div>
+</section>
+
+    </main>
+    <!-- Back to Top Button -->
+<button
+  id="back-to-top"
+  class="fixed bottom-4 right-4 text-normal w-10 h-10 rounded-full bg-normal shadow-low hover:bg-primary hover:text-inverted transition duration-300 dark:bg-inverted dark:text-inverted dark:hover:text-primaryInverted dark:shadow-lowInverted"
+  aria-label="Back to top"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" viewBox="0 0 256 256">
+    <path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm37.66-101.66a8,8,0,0,1-11.32,11.32L136,107.31V168a8,8,0,0,1-16,0V107.31l-18.34,18.35a8,8,0,0,1-11.32-11.32l32-32a8,8,0,0,1,11.32,0Z"></path>
+  </svg>
+</button>
+
+<footer class="py-4 px-[5%] mr-4">
+  <div class="container mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+      <!-- Logo -->
+      <a href="/" class="flex items-center font-bold text-lg no-underline group">
+        <h3 class="flex items-center">
+          <span class="text-4xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted"
+            >O</span
+          >
+          <span class="text-4xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight"
+            >.</span
+          >
+        </h3>
+      </a>
+
+      <!-- Copyright -->
+      <div class="flex flex-col gap-1">
+        <p class="text-xs text-center">
+          Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a> and
+          <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">TailwindCSS</a>. Hosted on
+          <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
+        </p>
+        <p class="text-xs text-center mb-4">
+          Icons from <a href="https://phosphoricons.com/" target="_blank" rel="noopener noreferrer">Phosphor Icons</a>.
+        </p>
+        <p class="text-xs text-center text-normalLight dark:text-invertedLight">
+          © 2025 Omar Almasry. All rights reserved.
+        </p>
+      </div>
+
+      <!-- Social Icons -->
+      <nav class="flex space-x-4" class="focus:outline-none focus:ring-2 focus:ring-teal-500">
+        <!-- Medium -->
+        <a href="https://github.com/omar-almasry11" target="_blank" rel="noopener noreferrer" class="hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7 fill-current hover:text-savoyBlue dark:hover:text-primaryInverted"
+            role="img"
+            aria-label="GitHub"
+            viewBox="0 0 256 256"
+          >
+            <path d="M128,128A56,56,0,1,1,72,72,56,56,0,0,1,128,128Zm56-56c-13.25,0-24,25.07-24,56s10.75,56,24,56,24-25.07,24-56S197.25,72,184,72Z" opacity="0.2"></path><path d="M72,64a64,64,0,1,0,64,64A64.07,64.07,0,0,0,72,64Zm0,112a48,48,0,1,1,48-48A48.05,48.05,0,0,1,72,176ZM184,64c-5.68,0-16.4,2.76-24.32,21.25C154.73,96.8,152,112,152,128s2.73,31.2,7.68,42.75C167.6,189.24,178.32,192,184,192s16.4-2.76,24.32-21.25C213.27,159.2,216,144,216,128s-2.73-31.2-7.68-42.75C200.4,66.76,189.68,64,184,64Zm0,112c-5.64,0-16-18.22-16-48s10.36-48,16-48,16,18.22,16,48S189.64,176,184,176ZM248,72V184a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Z"></path>
+          </svg>
+        </a>
+        <!-- Github -->
+        <a href="https://github.com/omar-almasry11" target="_blank" rel="noopener noreferrer" class="hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7 fill-current hover:text-savoyBlue dark:hover:text-primaryInverted"
+            role="img"
+            aria-label="GitHub"
+            viewBox="0 0 256 256"
+          >
+            <path d="M208,104v8a48,48,0,0,1-48,48H136a32,32,0,0,1,32,32v40H104V192a32,32,0,0,1,32-32H112a48,48,0,0,1-48-48v-8a49.28,49.28,0,0,1,8.51-27.3A51.92,51.92,0,0,1,76,32a52,52,0,0,1,43.83,24h32.34A52,52,0,0,1,196,32a51.92,51.92,0,0,1,3.49,44.7A49.28,49.28,0,0,1,208,104Z" opacity="0.2"></path><path d="M208.3,75.68A59.74,59.74,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58,58,0,0,0,208.3,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.76,41.76,0,0,1,200,104Z"></path>
+          </svg>
+        </a>
+
+        <!-- Codepen -->
+        <a
+          href="https://codepen.io/omaralmasry579"
+          target="_blank"
+          class="focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7 fill-current hover:text-savoyBlue dark:hover:text-primaryInverted"
+            role="img"
+            aria-label="Codepen"
+            viewBox="0 0 256 256"
+          >
+            <path d="M232,160,128,216,24,160l104-56Z" opacity="0.2"></path>
+            <path d="M235.79,89l-104-56a8,8,0,0,0-7.58,0l-104,56A8,8,0,0,0,16,96v64a8,8,0,0,0,4.21,7.05l104,56a8,8,0,0,0,7.58,0l104-56A8,8,0,0,0,240,160V96A8,8,0,0,0,235.79,89ZM224,146.61,189.45,128,224,109.39Zm-51.43-27.7L136,99.22V53.39L215.13,96Zm-44.57,24L100.3,128,128,113.09,155.7,128Zm-8-89.52V99.22L83.43,118.91,40.87,96Zm-88,56L66.55,128,32,146.61Zm51.43,27.7L120,156.78v45.83L40.87,160ZM136,202.61V156.78l36.57-19.69L215.13,160Z"></path>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/omar-al-masry-608a1581/"
+          target="_blank"
+          class="focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7 fill-current hover:text-savoyBlue dark:hover:text-primaryInverted"
+            role="img"
+            aria-label="LinkedIn"
+            viewBox="0 0 256 256"
+          >
+            <path d="M224,40V216a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8H216A8,8,0,0,1,224,40Z" opacity="0.2"></path><path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+          </svg>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:hello@omaralmasry.com" class="focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-300">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-7 h-7 fill-current hover:text-savoyBlue dark:hover:text-primaryInverted"
+            role="img"
+            aria-label="Email"
+            viewBox="0 0 256 256"
+          >
+            <path d="M224,56l-96,88L32,56Z" opacity="0.2"></path><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- JavaScript -->
+    <script src="/scripts/main.js" defer></script>
+  </body>
+</html>

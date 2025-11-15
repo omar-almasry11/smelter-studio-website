@@ -1,0 +1,35 @@
+<!-- Speed Optimization Results Grid Component -->
+<section class="py-12 px-[5%] {{ customClasses | default: '' }}">
+  <div class="container mx-auto">
+    <div class="max-w-5xl mx-auto">
+      {% if title %}
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-left">{{ title }}</h2>
+      {% endif %}
+
+      {% if projects and projects.size > 0 %}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-auto">
+          {% for project in projects %}
+            <div class="group">
+              <!-- Project Image -->
+              <div class="relative overflow-hidden rounded-lg">
+                <img
+                  src="{{ project.image }}"
+                  alt="{{ project.description }}"
+                  class="lightbox-trigger w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  tabindex="0"
+                  role="button"
+                  aria-label="Click to view {{ project.description }} in full size"
+                >
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-center text-lg text-normalLight dark:text-invertedLight">
+          No speed optimization results available at this time.
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</section>

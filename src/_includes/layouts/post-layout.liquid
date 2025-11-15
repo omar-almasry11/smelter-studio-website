@@ -1,0 +1,144 @@
+---
+layout: "/layouts/layout.liquid"
+---
+
+<header class="pt-16 pb-4 px-[5%] mx-auto">
+  <div class="container mx-auto max-w-4xl">
+    <h1>{{ title }}</h1>
+    <p class="text-xl sm:text-2xl text-normalLight max-w-2xl mb-6 dark:text-invertedLight">
+      {{ description }}
+    </p>
+    
+    <!-- Combined Metadata and Share Buttons Container -->
+    <div class="flex flex-col flex-wrap justify-between gap-y-8">
+      <!-- Published On & Reading Time -->
+      <div class="flex flex-wrap items-center gap-2 text-sm">
+        <span class="flex items-center gap-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 text-primary fill-current dark:text-primaryInverted"
+            role="img"
+            aria-label="Published On Icon"
+            viewBox="0 0 256 256"
+          >
+            <path d="M216,48V88H40V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z" opacity="0.2"></path>
+            <path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"></path>
+          </svg>
+          <span class="dark:text-inverted">Published on: {{ date | date: '%B %d, %Y' }}</span>
+        </span>
+
+        <span class="hidden md:inline text-normalLight dark:text-invertedLight">|</span>
+
+        <span class="flex items-center gap-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 text-primary fill-current dark:text-primaryInverted"
+            role="img"
+            aria-label="Reading Time Icon"
+            viewBox="0 0 256 256"
+          >
+            <path d="M216,136a88,88,0,1,1-88-88A88,88,0,0,1,216,136Z" opacity="0.2"></path>
+            <path d="M128,40a96,96,0,1,0,96,96A96.11,96.11,0,0,0,128,40Zm0,176a80,80,0,1,1,80-80A80.09,80.09,0,0,1,128,216ZM173.66,90.34a8,8,0,0,1,0,11.32l-40,40a8,8,0,0,1-11.32-11.32l40-40A8,8,0,0,1,173.66,90.34ZM96,16a8,8,0,0,1,8-8h48a8,8,0,0,1,0,16H104A8,8,0,0,1,96,16Z"></path>
+          </svg>
+          <span>Reading time ≈ <span id="reading-time">2</span> minutes</span>
+        </span>
+      </div>
+
+      <!-- Share Buttons -->
+      <div class="flex items-center flex-nowrap gap-4">
+        <!-- Share on X -->
+        <a href="https://twitter.com/share?url={{ page.url }}" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:text-invertedLight">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+            class="w-6 h-6 fill-current text-primary dark:text-primaryInverted" 
+            viewBox="0 0 256 256" 
+            role="img" 
+            aria-label="Share on X">
+            <path d="M208,216H160L48,40H96Z" opacity="0.2"></path>
+            <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>      
+          </svg>
+          <span class="text-sm hidden sm:inline whitespace-nowrap">Share on X</span>
+        </a>
+      
+        <!-- Share on LinkedIn -->
+        <a href="https://www.linkedin.com/shareArticle?url={{ page.url }}" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:text-invertedLight">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+            class="w-6 h-6 text-primary fill-current dark:text-primaryInverted" 
+            viewBox="0 0 256 256" 
+            role="img" 
+            aria-label="Share on LinkedIn">
+            <path d="M224,40V216a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8H216A8,8,0,0,1,224,40Z" opacity="0.2"></path>
+            <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>      
+          </svg>
+          <span class="text-sm hidden sm:inline whitespace-nowrap">Share on LinkedIn</span>
+        </a>
+      
+        <!-- Copy Link -->
+        <button type="button" 
+          class="flex items-center gap-2 text-normalLight hover:text-primary transition duration-300 dark:hover:text-primaryInverted"
+          onclick="copyToClipboard()">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         class="w-6 h-6 text-primary fill-current dark:text-primaryInverted" 
+         viewBox="0 0 256 256" 
+         role="img" 
+         aria-label="Copy Link">
+      <path d="M218.34,119.6,183.6,154.34a46.58,46.58,0,0,1-44.31,12.26c-.31.34-.62.67-.95,1L103.6,202.34A46.63,46.63,0,1,1,37.66,136.4L72.4,101.66A46.6,46.6,0,0,1,116.71,89.4c.31-.34.62-.67,1-1L152.4,53.66a46.63,46.63,0,0,1,65.94,65.94Z" opacity="0.2"></path>
+      <path d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,7.78,8.22H152a8,8,0,0,0,8-7.78A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"></path>      
+    </svg>
+    <span class="text-sm sm:inline transition duration-300 font-medium whitespace-nowrap dark:text-invertedLight dark:hover:text-primaryInverted" id="copy-link-text">
+      Copy Link
+    </span>
+  </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="py-12 px-[5%] max-w-4xl mx-auto">
+  <article class="prose">
+    {{ content }}
+  </article>
+</section>
+
+<script>
+  //Calculates the reading time for the blog post
+  document.addEventListener('DOMContentLoaded', () => {
+    const readingTimeElement = document.getElementById('reading-time');
+    if (readingTimeElement) {
+      const blogContent = document.querySelector('article').innerText;
+      const words = blogContent.trim().split(/\s+/).length;
+      const wordsPerMinute = 200;
+      const readingTime = Math.round(words / wordsPerMinute);
+      readingTimeElement.textContent = readingTime;
+    }
+  });
+
+  // Copies the current page link to the clipboard
+  function copyToClipboard() {
+    // Use the full URL of the current page
+    const fullUrl = window.location.href;
+    navigator.clipboard.writeText(fullUrl)
+      .then(() => {
+        const copyTextElement = document.getElementById('copy-link-text');
+        if (copyTextElement) {
+          // Change text to "Link Copied!"
+          copyTextElement.innerText = 'Link Copied!';
+          // Revert text back to "Copy Link" after 1.4 seconds
+          setTimeout(() => {
+            copyTextElement.innerText = 'Copy Link';
+          }, 1400);
+        }
+      })
+      .catch((err) => {
+        console.error('Failed to copy link:', err);
+      });
+  }
+
+  // Attach the function to the global window so inline handlers can see it.
+  window.copyToClipboard = copyToClipboard;
+</script>

@@ -1,0 +1,21 @@
+{% if text == "Contact" %}
+  <a 
+    href="mailto:hello@omaralmasry.com"
+    class="flex mr-auto ml-auto px-5 py-2 bg-primary text-lg text-inverted font-medium rounded-lg shadow-low no-underline transition duration-300 hover:bg-inverted hover:text-inverted dark:bg-primaryInverted dark:text-normal dark:hover:bg-normal dark:hover:text-normal dark:shadow-lowInverted focus:ring focus:ring-blue-300"
+    aria-label="Contact"
+  >
+    <span>{{ text }}</span>
+    <span class="ml-2">
+      {{ icon }}
+    </span>
+  </a>
+{% else %}
+  {% render 'partials/button', 
+    text: text,
+    icon: icon,
+    iconPosition: iconPosition,
+    type: type,
+    variant: variant,
+    ariaLabel: ariaLabel
+  %}
+{% endif %}
