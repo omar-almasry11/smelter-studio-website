@@ -51,12 +51,18 @@
   </div>
   <div class="flex items-center justify-between container mx-auto">
     <!-- Logo -->
-    <a href="/" class="flex items-center font-bold text-lg no-underline group">
-      <h3 class="flex items-center">
-        <span class="text-4xl sm:text-5xl font-normal text-normalLight transition duration-300 dark:text-invertedLight group-hover:text-primary dark:group-hover:text-primaryInverted">O</span>
-        <span class="text-4xl sm:text-5xl text-primary transition duration-300 ml-1 dark:text-primaryInverted group-hover:text-normalLight dark:group-hover:text-invertedLight">.</span>
-      </h3>
-    </a>    
+    <a
+      href="/"
+      aria-current="page"
+      class="inline-block no-underline transition-colors duration-[400ms]"
+    >
+      <div class="smelter-logo-wrapper flex flex-col leading-none">
+        <div class="smelter-logo-word text-xl sm:text-2xl font-bold text-black dark:text-white">Smelter</div>
+        <div class="studio-logo-word text-xs sm:text-sm font-normal text-gray-600 dark:text-gray-400 self-end -mt-1">
+          Studio
+        </div>
+      </div>
+    </a>
 
     <!-- Navigation Links & Button -->
     <div class="flex items-center space-x-4">
@@ -65,7 +71,7 @@
           <a
             href="/about/"
             class="text-normalLight text-lg sm:text-xl font-normal hover:text-primary no-underline dark:text-invertedLight dark:hover:text-primaryInverted"
-                      
+            
           >
             About
           </a>
@@ -92,7 +98,6 @@
     </span>
   </a>
 
-      
 
       <!-- Dark Mode Toggle -->
       <button id="themeToggle" class="px-2 py-2 bg-inverted rounded shadow-low dark:shadow-lowInveted dark:bg-normal">
@@ -121,6 +126,7 @@
     </div>
   </div>
 </nav>
+
     <main>
       <div class="min-h-svh mx-auto flex-col items-center px-[5%] py-24">
     <div class="text-center mr-auto ml-auto">

@@ -27,20 +27,20 @@ module.exports = {
       },
       backgroundColor: {
         normal: 'white',
-        secondary: ' #f2f2f2',
+        secondary: ' #FFFFFF',
         secondaryInverted: '#A39594',
-        inverted: '#000022',
-        primary: '#3d60e2',
+        inverted: '#080705',
+        primary: '#1437A7',
         primaryInverted: '#F7CB15',
       },
       textDecorationColor: {
-        normal: '#000022',
-        inverted: '#f2f2f2',
-        primary: '#3d60e2',
+        normal: '#080705',
+        inverted: '#FFFFFF',
+        primary: '#1437A7',
         primaryInverted: '#F7CB15',
       },
       borderColor: {
-        normal: '#f2f2f2',
+        normal: '#FFFFFF',
         inverted: '#1E1E1E',
       },
       boxShadow: {
