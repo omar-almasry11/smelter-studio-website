@@ -2627,6 +2627,10 @@ input[type="radio"]:focus {
   position: sticky;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
 .bottom-4 {
   bottom: 1rem;
 }
@@ -2649,6 +2653,18 @@ input[type="radio"]:focus {
 
 .z-50 {
   z-index: 50;
+}
+
+.-z-10 {
+  z-index: -10;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.z-0 {
+  z-index: 0;
 }
 
 .col-span-2 {
@@ -2986,6 +3002,10 @@ input[type="radio"]:focus {
   max-width: 24rem;
 }
 
+.max-w-6xl {
+  max-width: 72rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -3008,6 +3028,10 @@ input[type="radio"]:focus {
 
 .resize-y {
   resize: vertical;
+}
+
+.resize {
+  resize: both;
 }
 
 .auto-rows-auto {
@@ -3367,6 +3391,16 @@ input[type="radio"]:focus {
   line-height: 1rem;
 }
 
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -3453,6 +3487,11 @@ input[type="radio"]:focus {
   --tw-shadow: 0px 2px 4px rgba(0, 0, 34, 0.1), 0px 3px 6px rgba(0, 0, 0, 0.14);
   --tw-shadow-colored: 0px 2px 4px var(--tw-shadow-color), 0px 3px 6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.drop-shadow {
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .invert {
@@ -3878,6 +3917,11 @@ input[type="radio"]:focus {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
   }
 }
 

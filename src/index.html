@@ -2,45 +2,47 @@
 layout: layouts/layout.liquid
 title: Home
 ---
-<div class="min-h-svh mx-auto flex-col items-center px-[5%] py-24">
-    <div class="text-center mr-auto ml-auto">
-      <div class="max-w-2xl mr-auto ml-auto">
-        <div class="relative mx-auto w-44 h-44 rounded-full bg-black mb-6 overflow-hidden shadow-low dark:shadow-lowInverted">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover">
-              <source src="images/omar-almasry-emoji-video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        <p class="text-8xl sm:text-8xl font-extrabold">Hi there!</p>
-        <h1 class="py-4 text-xl sm:text-2xl text-normalLight font-normal dark:text-invertedLight">
-            My name is Omar Almasry. I'm an independent UX engineer working with design agencies and in-house marketing teams to create scalable, high-performance web solutions.
-        </h1>
-     </div>
-   </div>
+<div class="min-h-svh mx-auto flex flex-col justify-center items-center px-[5%] py-24 relative overflow-hidden z-0">
+  <canvas class="webgl absolute inset-0 w-full h-full -z-10"></canvas>
+  <div class="text-center mr-auto ml-auto relative z-10">
+    <div class="max-w-5xl mr-auto ml-auto">
+      <p class="text-6xl sm:text-7xl font-extrabold">Intuitive digital products. <br> Huge business impact.</p>
+      <h1 class="py-4 text-xl sm:text-2xl text-normalLight font-normal dark:text-invertedLight">
+        Smelter is a Canadian digital product studio that empowers business owners and marketing teams with UX-driven
+        digital solutions. We build intuitive digital products that make your life easier and helps your business
+        thrive.
+      </h1>
+    </div>
   </div>
-  {%- render 'partials/section-standard', 
-    header: 'Featured Articles',
-    subheader: 'I love learning and writing. So, here are some insights from my journey.',
-    content: '<p>Default Content</p>',
-    collection: collections.posts,
-    limit: 3,
-    collectionLink: '/blog',
-  -%}
+</div>
+{%- render 'partials/section-standard',
+header: 'Featured Articles',
+subheader: 'I love learning and writing. So, here are some insights from my journey.',
+content: '<p>Default Content</p>',
+collection: collections.posts,
+limit: 3,
+collectionLink: '/blog',
+-%}
 
-  {%- 
-    render 'partials/section-standard',
-    header: 'Services',
-    subheader: 'How I help my clients grow with tailored UX engineering and design solutions.',
-    collection: collections.services,
-    gridLayout: true,
-    limit: 4,
-    customClasses: 'pb-24 pt-8'
-    -%}
+{%-
+render 'partials/section-standard',
+header: 'Services',
+subheader: 'How I help my clients grow with tailored UX engineering and design solutions.',
+collection: collections.services,
+gridLayout: true,
+limit: 4,
+customClasses: 'pb-24 pt-8'
+-%}
 
-  {%- render 'partials/section-standard', 
-    header: 'Featured Projects',
-    subheader: 'Interesting case studies for some projects I worked on.',
-    collection: collections.caseStudies,
-    limit: 6,
-    customClasses: 'pb-24 pt-8'
-      -%}
+{%- render 'partials/section-standard',
+header: 'Featured Projects',
+subheader: 'Interesting case studies for some projects I worked on.',
+collection: collections.caseStudies,
+limit: 6,
+customClasses: 'pb-24 pt-8'
+-%}
+
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.138.1/build/three.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/three@0.138.1/examples/js/controls/OrbitControls.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script type="module" src="/scripts/galaxy-scene.js"></script>
