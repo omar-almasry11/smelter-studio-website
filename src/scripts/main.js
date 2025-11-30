@@ -507,13 +507,42 @@ function initDynamicFavicon() {
   if (!faviconLink) return;
 
   const colors = [
-    ['#D8DDEE', '#F2F2F2'], // Original: Blue-ish, Gray
-    ['#EED8D8', '#F2F2F2'], // Red-ish, Gray
-    ['#D8EED8', '#F2F2F2'], // Green-ish, Gray
-    ['#EED8EE', '#F2F2F2'], // Purple-ish, Gray
+    ['#D8DDEE', '#4A64B5'], // Original: Blue-ish, Gray
+    ['#4A64B5', '#D8DDEE'], // Red-ish, Gray
   ];
 
-  let currentIndex = 0;
+  // Helper function to convert hex to RGB
+  function hexToRgb(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+  }
+
+  // Helper function to convert RGB to hex
+  function rgbToHex(r, g, b) {
+    return '#' + [r, g, b].map(x => {
+      const hex = Math.round(x).toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    }).join('');
+  }
+
+  // Helper function to interpolate between two colors
+  function interpolateColor(color1, color2, t) {
+    const rgb1 = hexToRgb(color1);
+    const rgb2 = hexToRgb(color2);
+    const r = rgb1.r + (rgb2.r - rgb1.r) * t;
+    const g = rgb1.g + (rgb2.g - rgb1.g) * t;
+    const b = rgb1.b + (rgb2.b - rgb1.b) * t;
+    return rgbToHex(r, g, b);
+  }
+
+  // Easing function for smooth animation (ease-in-out)
+  function easeInOut(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
 
   function getSvgContent(color1, color2) {
     return `<svg width="216" height="216" viewBox="0 0 216 216" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -524,13 +553,41 @@ function initDynamicFavicon() {
 </svg>`;
   }
 
-  setInterval(() => {
-    currentIndex = (currentIndex + 1) % colors.length;
-    const [color1, color2] = colors[currentIndex];
-    const svg = getSvgContent(color1, color2);
-    const encoded = 'data:image/svg+xml;base64,' + btoa(svg);
-    faviconLink.href = encoded;
-  }, 2000);
+  let startTime = Date.now();
+  const duration = 2000; // 2 seconds per transition
+
+  function animate() {
+    const elapsed = (Date.now() - startTime) % (duration * 2);
+    const progress = elapsed / duration;
+    
+    // Determine which direction we're animating
+    let t;
+    if (progress < 1) {
+      // First half: transition from colors[0] to colors[1]
+      t = easeInOut(progress);
+      const [color1Start, color2Start] = colors[0];
+      const [color1End, color2End] = colors[1];
+      const color1 = interpolateColor(color1Start, color1End, t);
+      const color2 = interpolateColor(color2Start, color2End, t);
+      const svg = getSvgContent(color1, color2);
+      const encoded = 'data:image/svg+xml;base64,' + btoa(svg);
+      faviconLink.href = encoded;
+    } else {
+      // Second half: transition from colors[1] back to colors[0]
+      t = easeInOut(progress - 1);
+      const [color1Start, color2Start] = colors[1];
+      const [color1End, color2End] = colors[0];
+      const color1 = interpolateColor(color1Start, color1End, t);
+      const color2 = interpolateColor(color2Start, color2End, t);
+      const svg = getSvgContent(color1, color2);
+      const encoded = 'data:image/svg+xml;base64,' + btoa(svg);
+      faviconLink.href = encoded;
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 }
 
 document.addEventListener('DOMContentLoaded', initDynamicFavicon);

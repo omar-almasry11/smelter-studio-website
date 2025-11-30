@@ -1,0 +1,10 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Anchor icon -->
+  <path d="M100 40C105.523 40 110 35.523 110 30C110 24.477 105.523 20 100 20C94.477 20 90 24.477 90 30C90 35.523 94.477 40 100 40Z" fill="#2563EB"/>
+  
+  <path d="M100 50V130M100 130C85 130 60 135 60 160M100 130C115 130 140 135 140 160M60 110H140" stroke="#2563EB" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <circle cx="60" cy="160" r="8" fill="#2563EB"/>
+  <circle cx="140" cy="160" r="8" fill="#2563EB"/>
+</svg>
+

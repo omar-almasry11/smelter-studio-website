@@ -1,38 +1,52 @@
-
 /**
- * Base
+ * Enhanced Particles Animation
+ * Improved reliability, visibility, and performance
  */
 
-// Canvas
-const canvas = document.querySelector('canvas.webgl');
+// Wait for DOM and Three.js to be ready
+const initGalaxyScene = () => {
+  // Check if Three.js is available
+  if (typeof THREE === 'undefined') {
+    console.warn('Three.js not loaded, retrying...');
+    setTimeout(initGalaxyScene, 100);
+    return;
+  }
 
-// Scene
-const scene = new THREE.Scene();
+  // Canvas
+  const canvas = document.querySelector('canvas.webgl');
+  if (!canvas) {
+    console.warn('Canvas not found');
+    return;
+  }
 
-/**
- * Galaxy Parameters (Updated)
- */
-const parameters = {
-  count: 48900,
-  size: 0.1,
-  radius: 18.81,
-  branches: 3,
-  spin: 2.38,
-  randomness: 2,
-  randomnessPower: 3.58,
-  insideColor: '#f2f2f2',
-  outsideColor: '#d8ddee',
-  transitionDuration: 4,   // Retained for animation logic
-  affectedPercentage: 0.2, // Retained for animation logic
-};
+  // Scene
+  const scene = new THREE.Scene();
 
-let geometry = null;
-let material = null;
-let points = null;
-let transitionStartTimes = [];
-let affectedParticles = []; // Array to track affected particles
+  /**
+   * Galaxy Parameters (Enhanced)
+   */
+  const parameters = {
+    count: 15000, // Reduced for better performance
+    size: 0.15, // Slightly larger for better visibility
+    radius: 15,
+    branches: 1,
+    spin: 3,
+    randomness: 2,
+    randomnessPower: 3.58,
+    insideColor: '#f2f2f2',
+    outsideColor: '#d8ddee',
+    transitionDuration: 4,
+    affectedPercentage: 0.4, // Increased for more dynamic effect
+  };
 
-const generateGalaxy = () => {
+  let geometry = null;
+  let material = null;
+  let points = null;
+  let transitionStartTimes = [];
+  let affectedParticles = [];
+  let animationId = null;
+
+  const generateGalaxy = () => {
   /**
    * Destroy Old Galaxy
    */
@@ -88,14 +102,16 @@ const generateGalaxy = () => {
   geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
   /**
-   * Material
+   * Material (Enhanced for better visibility)
    */
   material = new THREE.PointsMaterial({
     size: parameters.size,
     sizeAttenuation: true,
     depthWrite: false,
-    blending: THREE.NormalBlending,
+    blending: THREE.NormalBlending, // Normal blending works better on white backgrounds
     vertexColors: true,
+    transparent: true,
+    opacity: 0.9, // Slight transparency for depth
   });
 
   /**
@@ -105,155 +121,190 @@ const generateGalaxy = () => {
   scene.add(points);
 };
 
-// Theme Colors
-const themeColors = {
-  light: {
-    bg: new THREE.Color('white'),
-    inside: '#f2f2f2',
-    outside: '#d8ddee',
-  },
-  dark: {
-    bg: new THREE.Color('#080705'),
-    inside: '#3d60e2', // savoyBlue
-    outside: '#000022', // oxfordBlue
-  }
-};
-
-// Function to update background and particles based on theme
-const updateTheme = () => {
-  const isDark = document.documentElement.classList.contains('dark');
-  const theme = isDark ? themeColors.dark : themeColors.light;
-
-  scene.background = theme.bg;
-
-  // Update parameters
-  parameters.insideColor = theme.inside;
-  parameters.outsideColor = theme.outside;
-
-  // Regenerate galaxy with new colors
-  generateGalaxy();
-};
-
-// Initial set
-updateTheme();
-
-// Watch for theme changes
-const observer = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    if (mutation.attributeName === 'class') {
-      updateTheme();
+  // Theme Colors
+  const themeColors = {
+    light: {
+      bg: new THREE.Color('white'),
+      inside: '#f2f2f2',
+      outside: '#d8ddee',
+    },
+    dark: {
+      bg: new THREE.Color('#080705'),
+      inside: '#3d60e2', // savoyBlue
+      outside: '#000022', // oxfordBlue
     }
+  };
+
+  // Function to update background and particles based on theme
+  const updateTheme = () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    const theme = isDark ? themeColors.dark : themeColors.light;
+
+    scene.background = theme.bg;
+
+    // Update parameters
+    parameters.insideColor = theme.inside;
+    parameters.outsideColor = theme.outside;
+
+    // Regenerate galaxy with new colors
+    generateGalaxy();
+  };
+
+  // Initial set
+  updateTheme();
+
+  // Watch for theme changes
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === 'class') {
+        updateTheme();
+      }
+    });
   });
-});
 
-observer.observe(document.documentElement, {
-  attributes: true,
-  attributeFilter: ['class'],
-});
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['class'],
+  });
 
-/**
- * Sizes
- */
-const sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight,
-  // height: 1000
-};
+  /**
+   * Sizes
+   */
+  const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
 
-window.addEventListener('resize', () => {
-  // Update sizes
-  sizes.width = window.innerWidth;
-  sizes.height = window.innerHeight;
+  const handleResize = () => {
+    // Update sizes
+    sizes.width = window.innerWidth;
+    sizes.height = window.innerHeight;
 
-  // Update camera
-  camera.aspect = sizes.width / sizes.height;
-  camera.updateProjectionMatrix();
+    // Update camera
+    camera.aspect = sizes.width / sizes.height;
+    camera.updateProjectionMatrix();
 
-  // Update renderer
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  };
+
+  window.addEventListener('resize', handleResize);
+
+  /**
+   * Camera
+   */
+  const camera = new THREE.PerspectiveCamera(52, sizes.width / sizes.height, 0.1, 100);
+  camera.position.x = 3;
+  camera.position.y = 1.5;
+  camera.position.z = 3;
+  scene.add(camera);
+
+  /**
+   * Controls
+   */
+  const controls = new THREE.OrbitControls(camera, canvas);
+  controls.enableDamping = true;
+  controls.enableZoom = false;
+  controls.enableRotate = false;
+  controls.enablePan = false;
+
+  /**
+   * Renderer (Enhanced)
+   */
+  const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    antialias: true, // Better quality
+    alpha: true, // Support transparency
+  });
   renderer.setSize(sizes.width, sizes.height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-});
+  renderer.setClearColor(0x000000, 0); // Transparent background
 
-/**
- * Camera
- */
-const camera = new THREE.PerspectiveCamera(52, sizes.width / sizes.height, 0.1, 100);
-camera.position.x = 3;
-camera.position.y = 1.5;
-camera.position.z = 3;
-scene.add(camera);
+  /**
+   * Animate (Enhanced with better performance)
+   */
+  const clock = new THREE.Clock();
 
-/**
- * Controls
- */
-const controls = new THREE.OrbitControls(camera, canvas);
-controls.enableDamping = true;
-controls.enableZoom = false;
-controls.enableRotate = false; // Disable rotation via touch or mouse
-controls.enablePan = false;    // Disable panning via touch or mouse
-
-/**
- * Renderer
- */
-const renderer = new THREE.WebGLRenderer({
-  canvas: canvas,
-});
-renderer.setSize(sizes.width, sizes.height);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-/**
- * Animate
- */
-const clock = new THREE.Clock();
-
-const tick = () => {
-  const elapsedTime = clock.getElapsedTime();
-
-  // Rotate galaxy
-  points.rotation.y = elapsedTime * 0.05;
-
-  // Smooth color transitions for affected particles
-  const colors = geometry.attributes.color.array;
-  const colorInside = new THREE.Color(parameters.insideColor);
-  const colorOutside = new THREE.Color(parameters.outsideColor);
-
-  for (let i = 0; i < parameters.count; i++) {
-    if (!affectedParticles[i]) continue; // Skip unaffected particles
-
-    const i3 = i * 3;
-    const timeSinceTransition = elapsedTime - transitionStartTimes[i];
-
-    // Determine transition phase (0 to 1 over transition duration)
-    const phase = (timeSinceTransition % parameters.transitionDuration) / parameters.transitionDuration;
-
-    // Interpolate between inside and outside colors
-    const interpolatedColor = colorInside
-      .clone()
-      .lerp(colorOutside, Math.abs(Math.sin(phase * Math.PI)));
-
-    colors[i3] = interpolatedColor.r;
-    colors[i3 + 1] = interpolatedColor.g;
-    colors[i3 + 2] = interpolatedColor.b;
-
-    // Reset transition start time if necessary
-    if (timeSinceTransition > parameters.transitionDuration) {
-      transitionStartTimes[i] = elapsedTime;
+  const tick = () => {
+    // Safety check - ensure geometry exists
+    if (!points || !geometry) {
+      animationId = requestAnimationFrame(tick);
+      return;
     }
-  }
 
-  geometry.attributes.color.needsUpdate = true;
+    const elapsedTime = clock.getElapsedTime();
 
-  // Update controls (though interactions are disabled)
-  controls.update();
+    // Rotate galaxy with smooth easing
+    points.rotation.y = elapsedTime * 0.05;
 
-  // Render
-  renderer.render(scene, camera);
+    // Smooth color transitions for affected particles
+    const colors = geometry.attributes.color.array;
+    const colorInside = new THREE.Color(parameters.insideColor);
+    const colorOutside = new THREE.Color(parameters.outsideColor);
 
-  // Call tick again on the next frame
-  window.requestAnimationFrame(tick);
+    // Batch update colors for better performance
+    for (let i = 0; i < parameters.count; i++) {
+      if (!affectedParticles[i]) continue;
+
+      const i3 = i * 3;
+      const timeSinceTransition = elapsedTime - transitionStartTimes[i];
+
+      // Determine transition phase with smooth easing
+      const phase = (timeSinceTransition % parameters.transitionDuration) / parameters.transitionDuration;
+      const easedPhase = Math.abs(Math.sin(phase * Math.PI));
+
+      // Interpolate between inside and outside colors
+      const interpolatedColor = colorInside
+        .clone()
+        .lerp(colorOutside, easedPhase);
+
+      colors[i3] = interpolatedColor.r;
+      colors[i3 + 1] = interpolatedColor.g;
+      colors[i3 + 2] = interpolatedColor.b;
+
+      // Reset transition start time if necessary
+      if (timeSinceTransition > parameters.transitionDuration) {
+        transitionStartTimes[i] = elapsedTime;
+      }
+    }
+
+    geometry.attributes.color.needsUpdate = true;
+
+    // Update controls
+    controls.update();
+
+    // Render
+    renderer.render(scene, camera);
+
+    // Call tick again on the next frame
+    animationId = requestAnimationFrame(tick);
+  };
+
+  // Start animation
+  animationId = requestAnimationFrame(tick);
+
+  // Cleanup function
+  return () => {
+    if (animationId) {
+      cancelAnimationFrame(animationId);
+    }
+    window.removeEventListener('resize', handleResize);
+    observer.disconnect();
+    if (points) {
+      geometry?.dispose();
+      material?.dispose();
+      scene.remove(points);
+    }
+  };
 };
 
-tick();
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initGalaxyScene);
+} else {
+  initGalaxyScene();
+}
 
 /**
  * GSAP Animations

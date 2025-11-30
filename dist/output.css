@@ -2990,6 +2990,10 @@ input[type="radio"]:focus {
   max-width: 24rem;
 }
 
+.max-w-7xl {
+  max-width: 80rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -3016,6 +3020,10 @@ input[type="radio"]:focus {
 
 .resize {
   resize: both;
+}
+
+.list-disc {
+  list-style-type: disc;
 }
 
 .auto-rows-auto {
@@ -3126,6 +3134,12 @@ input[type="radio"]:focus {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
 .self-end {
@@ -3322,6 +3336,10 @@ input[type="radio"]:focus {
   padding-top: 2rem;
 }
 
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -3442,8 +3460,16 @@ input[type="radio"]:focus {
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
 }
 
+.underline {
+  text-decoration-line: underline;
+}
+
 .no-underline {
   text-decoration-line: none;
+}
+
+.opacity-60 {
+  opacity: 0.6;
 }
 
 .shadow-low {
@@ -3508,6 +3534,10 @@ input[type="radio"]:focus {
 
 .duration-\[400ms\] {
   transition-duration: 400ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Prism.js Syntax Highlighting Theme */
@@ -3910,6 +3940,10 @@ input[type="radio"]:focus {
 @media (min-width: 1024px) {
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:justify-end {

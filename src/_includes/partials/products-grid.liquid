@@ -1,0 +1,83 @@
+<!-- Products Grid Component -->
+<section class="py-16 px-[5%] {{ customClasses | default: '' }}">
+  <div class="container">
+    <div class="max-w-3xl mx-auto">
+      {% if header or subheader %}
+        <div class="mb-10">
+          {% if header %}
+            <div class="flex items-center">
+              <h2 class="leading-none">
+                {{ header | default: 'Our Products' }}
+              </h2>
+            </div>
+          {% endif %}
+          {% if subheader %}
+            <p class="text-xl sm:text-2xl text-normalLight mb-10 dark:text-invertedLight">
+              {{ subheader | default: '' }}
+            </p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if products and products.size > 0 %}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {% for product in products %}
+            <div class="standard-card group">
+              <!-- Product Logo -->
+              {% if product.logo %}
+                <img
+                  src="{{ product.logo }}"
+                  alt="{{ product.name }} logo"
+                  width="64"
+                  height="64"
+                  class="mb-4 w-16 h-16 object-contain dark:hidden"
+                >
+              {% endif %}
+              
+              <!-- Dark Mode Logo -->
+              {% if product.logoDark %}
+                <img
+                  src="{{ product.logoDark }}"
+                  alt="{{ product.name }} logo"
+                  width="64"
+                  height="64"
+                  class="hidden dark:block mb-4 w-16 h-16 object-contain"
+                >
+              {% endif %}
+
+              <!-- Product Name -->
+              <h3 class="font-bold mb-2 text-xl">
+                {{ product.name }}
+              </h3>
+
+              <!-- Product Description -->
+              {% if product.description %}
+                <p class="mb-6 text-md text-normalLight dark:text-invertedLight">
+                  {{ product.description }}
+                </p>
+              {% endif %}
+
+              <!-- Learn More Link -->
+              <div class="mt-auto">
+                <a
+                  href="{{ product.url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-lg text-normal dark:text-inverted hover:text-primary dark:hover:text-primaryInverted transition-colors duration-200 no-underline"
+                >
+                  <span>Learn more</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 256 256">
+                    <path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-center text-lg text-normalLight dark:text-invertedLight">No products available at this time.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+

@@ -6,12 +6,12 @@ title: Home
   <canvas class="webgl absolute inset-0 w-full h-full -z-10"></canvas>
   <div class="text-center mr-auto ml-auto relative z-10">
     <div class="max-w-5xl mr-auto ml-auto">
-      <p class="text-6xl sm:text-7xl font-extrabold">Intuitive digital products. <br> Huge business impact.</p>
-      <h1 class="py-4 text-xl sm:text-2xl text-normalLight font-normal dark:text-invertedLight">
+      <h1 class="text-6xl sm:text-7xl font-bold">Intuitive digital products. <br> Huge business impact.</h1>
+      <p class="py-4 text-xl sm:text-2xl text-normalLight font-normal dark:text-inverted">
         Smelter is a Canadian digital product studio that empowers business owners and marketing teams with UX-driven
         digital solutions. We build intuitive digital products that make your life easier and helps your business
         thrive.
-      </h1>
+      </p>
     </div>
   </div>
 </div>
@@ -25,12 +25,10 @@ collectionLink: '/blog',
 -%}
 
 {%-
-render 'partials/section-standard',
-header: 'Services',
-subheader: 'How I help my clients grow with tailored UX engineering and design solutions.',
-collection: collections.services,
-gridLayout: true,
-limit: 4,
+render 'partials/products-grid',
+header: 'Our Products Portfolio',
+subheader: 'Empowering thousands of users worldwide with our suite of powerful digital products.',
+products: products,
 customClasses: 'pb-24 pt-8'
 -%}
 
