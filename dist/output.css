@@ -593,12 +593,12 @@ a:hover {
 }
 
 a:is(.dark *) {
-  text-decoration-color: #F7CB15;
+  text-decoration-color: #A7B7F1;
 }
 
 a:hover:is(.dark *) {
   --tw-text-opacity: 1;
-  color: rgb(247 203 21 / var(--tw-text-opacity, 1));
+  color: rgb(167 183 241 / var(--tw-text-opacity, 1));
   text-decoration-color: transparent;
 }
 
@@ -694,7 +694,7 @@ a[aria-current=page] {
 
 a[aria-current=page]:is(.dark *) {
   --tw-text-opacity: 1;
-  color: rgb(247 203 21 / var(--tw-text-opacity, 1));
+  color: rgb(167 183 241 / var(--tw-text-opacity, 1));
 }
 
 .container {
@@ -1099,12 +1099,12 @@ a[aria-current=page]:is(.dark *) {
   --tw-prose-bullets: #3d60e2;
   --tw-prose-hr: #e5e7eb;
   --tw-prose-quotes: #111827;
-  --tw-prose-quote-borders: #EDF060;
+  --tw-prose-quote-borders: #A7B7F1;
   --tw-prose-captions: #515751;
   --tw-prose-kbd: #111827;
   --tw-prose-kbd-shadows: 17 24 39;
   --tw-prose-code: #A39594;
-  --tw-prose-pre-code: #F7CB15;
+  --tw-prose-pre-code: #A7B7F1;
   --tw-prose-pre-bg: #080705;
   --tw-prose-th-borders: #d1d5db;
   --tw-prose-td-borders: #FFFFFF;
@@ -1522,15 +1522,15 @@ a[aria-current=page]:is(.dark *) {
 .prose:is(.dark *) {
   --tw-prose-body: #f2f2f2;
   --tw-prose-headings: #f2f2f2;
-  --tw-prose-links: #F7CB15;
+  --tw-prose-links: #A7B7F1;
   --tw-prose-bold: #f2f2f2;
   --tw-prose-counters: #A39594;
-  --tw-prose-bullets: #F7CB15;
+  --tw-prose-bullets: #A7B7F1;
   --tw-prose-hr: #A39594;
   --tw-prose-quotes: #A39594;
-  --tw-prose-quote-borders: #EDF060;
+  --tw-prose-quote-borders: #A7B7F1;
   --tw-prose-captions: #A39594;
-  --tw-prose-code: #F7CB15;
+  --tw-prose-code: #A7B7F1;
   --tw-prose-pre-code: #000022;
   --tw-prose-pre-bg: #f2f2f2;
   --tw-prose-th-borders: #1E1E1E;
@@ -2449,7 +2449,7 @@ a[aria-current=page]:is(.dark *) {
 
 .step-indicator.active:is(.dark *) {
   --tw-bg-opacity: 1;
-  background-color: rgb(247 203 21 / var(--tw-bg-opacity, 1));
+  background-color: rgb(167 183 241 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(0 0 34 / var(--tw-text-opacity, 1));
 }
@@ -2467,7 +2467,7 @@ a[aria-current=page]:is(.dark *) {
 
 .step-indicator.completed:is(.dark *) {
   --tw-bg-opacity: 1;
-  background-color: rgb(247 203 21 / var(--tw-bg-opacity, 1));
+  background-color: rgb(167 183 241 / var(--tw-bg-opacity, 1));
   --tw-text-opacity: 1;
   color: rgb(0 0 34 / var(--tw-text-opacity, 1));
 }
@@ -2483,7 +2483,7 @@ a[aria-current=page]:is(.dark *) {
 
 .step-line.completed:is(.dark *) {
   --tw-bg-opacity: 1;
-  background-color: rgb(247 203 21 / var(--tw-bg-opacity, 1));
+  background-color: rgb(167 183 241 / var(--tw-bg-opacity, 1));
 }
 
 /* Radio button custom styling */
@@ -2605,10 +2605,6 @@ input[type="radio"]:focus {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-}
-
-.visible {
-  visibility: visible;
 }
 
 .invisible {
@@ -3442,7 +3438,7 @@ input[type="radio"]:focus {
 
 .text-primaryInverted {
   --tw-text-opacity: 1;
-  color: rgb(247 203 21 / var(--tw-text-opacity, 1));
+  color: rgb(167 183 241 / var(--tw-text-opacity, 1));
 }
 
 .text-red-600 {
@@ -3539,7 +3535,7 @@ input[type="radio"]:focus {
 .toc ul a:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(242 242 242 / var(--tw-text-opacity, 1));
-  text-decoration-color: #F7CB15;
+  text-decoration-color: #A7B7F1;
 }
 
 /* Remove Bullet Points */
@@ -3708,11 +3704,11 @@ input[type="radio"]:focus {
 
 .dark\:bg-primaryInverted:is(.dark *) {
   --tw-bg-opacity: 1;
-  background-color: rgb(247 203 21 / var(--tw-bg-opacity, 1));
+  background-color: rgb(167 183 241 / var(--tw-bg-opacity, 1));
 }
 
 .dark\:bg-primaryInverted\/20:is(.dark *) {
-  background-color: rgb(247 203 21 / 0.2);
+  background-color: rgb(167 183 241 / 0.2);
 }
 
 .dark\:object-contain:is(.dark *) {
@@ -3742,7 +3738,7 @@ input[type="radio"]:focus {
 
 .dark\:text-primaryInverted:is(.dark *) {
   --tw-text-opacity: 1;
-  color: rgb(247 203 21 / var(--tw-text-opacity, 1));
+  color: rgb(167 183 241 / var(--tw-text-opacity, 1));
 }
 
 .dark\:text-red-400:is(.dark *) {
@@ -3794,7 +3790,7 @@ input[type="radio"]:focus {
 
 .dark\:hover\:text-primaryInverted:hover:is(.dark *) {
   --tw-text-opacity: 1;
-  color: rgb(247 203 21 / var(--tw-text-opacity, 1));
+  color: rgb(167 183 241 / var(--tw-text-opacity, 1));
 }
 
 @media (min-width: 640px) {

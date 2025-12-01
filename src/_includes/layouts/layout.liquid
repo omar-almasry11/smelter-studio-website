@@ -1,40 +1,133 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% assign siteData = site %}
+    {% assign siteName = siteData.name | default: 'Smelter Studio' %}
+    {% assign defaultTitle = siteData.defaultTitle | default: siteName %}
+    {% assign titleCandidate = seo.title | default: title | default: defaultTitle %}
+    {% assign shouldAppendSiteName = seo.appendSiteName %}
+    {% if shouldAppendSiteName == false %}
+      {% assign metaTitle = titleCandidate %}
+    {% else %}
+      {% if titleCandidate contains siteName %}
+        {% assign metaTitle = titleCandidate %}
+      {% else %}
+        {% assign metaTitle = titleCandidate | append: ' | ' | append: siteName %}
+      {% endif %}
+    {% endif %}
+    {% assign metaDescription = seo.description | default: description | default: siteData.description | default: 'Smelter Studio is a Canadian digital product studio specializing in UX engineering, accessibility, and high-performance websites.' %}
+    {% assign siteUrl = siteData.url | default: 'https://www.smelter.studio' %}
+    {% assign rawCanonical = seo.canonical | default: seo.url | default: page_url | default: page.url | default: '/' %}
+    {% if rawCanonical contains 'http' %}
+      {% assign canonicalUrl = rawCanonical %}
+    {% else %}
+      {% assign canonicalUrl = siteUrl | append: rawCanonical %}
+    {% endif %}
+    {% assign imageSource = seo.image | default: og_image | default: siteData.defaultImage | default: '/images/png/og.png' %}
+    {% if imageSource contains 'http' %}
+      {% assign metaImage = imageSource %}
+    {% else %}
+      {% assign metaImage = siteUrl | append: imageSource %}
+    {% endif %}
+    {% assign ogType = seo.type | default: 'website' %}
+    {% assign metaRobots = seo.robots | default: 'index, follow' %}
+    {% assign ogLocale = siteData.locale | default: 'en_CA' %}
+    {% assign imageAlt = seo.imageAlt | default: siteData.imageAlt | default: siteName %}
+    {% assign authorName = seo.author | default: siteData.founder | default: siteName %}
+    {% assign logoPath = siteData.logo | default: '/images/png/og.png' %}
+    {% if logoPath contains 'http' %}
+      {% assign logoUrl = logoPath %}
+    {% else %}
+      {% assign logoUrl = siteUrl | append: logoPath %}
+    {% endif %}
+    {% assign siteAddress = siteData.address %}
+
     <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-      name="description"
-      content="{{ description | default: 'The Personal Website of Omar Almasry: An Independent UX Engineer' }}"
-    >
-    <meta name="author" content="Omar Almasry">
-    <title>{{ title | default: 'Omar Almasry Portfolio' }}</title>
+    <title>{{ metaTitle }}</title>
+    <meta name="description" content="{{ metaDescription }}">
+    <meta name="author" content="{{ authorName }}">
 
     <!-- Favicons -->
-
     <link rel="icon" type="image/svg+xml" href="/images/smelter-favicon.svg" id="dynamic-favicon">
     <link rel="apple-touch-icon" href="/images/smelter-webclip.png">
 
-    <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="{{ title | default: "Omar Almasry\s Personal Website" }}">
-    <meta
-      property="og:description"
-      content="{{ description | default: 'Showcasing scalable, high-performance websites optimized for enterprises.' }}"
-    >
-    <meta property="og:image" content="{{ og_image | default: '/images/png/og.png' }}">
-    <meta property="og:url" content="{{ page_url | default: 'https://omaralmasry.com' }}">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ title | default: "Omar Almasry\'s Portfolio" }}">
-    <meta
-      name="twitter:description"
-      content="{{ description | default: 'Crafting accessible, high-performance websites and digital products. UX Engineer helping brands deliver seamless user experiences.' }}"
-    >
-    <meta name="twitter:image" content="{{ og_image | default: '/images/png/og.png' }}">
+    <!-- Robots -->
+    <meta name="robots" content="{{ metaRobots }}">
+    <link rel="canonical" href="{{ canonicalUrl }}">
 
-    <!-- Robots Meta -->
-    <meta name="robots" content="index, follow">
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ metaTitle }}">
+    <meta property="og:description" content="{{ metaDescription }}">
+    <meta property="og:image" content="{{ metaImage }}">
+    <meta property="og:image:alt" content="{{ imageAlt }}">
+    <meta property="og:url" content="{{ canonicalUrl }}">
+    <meta property="og:type" content="{{ ogType }}">
+    <meta property="og:site_name" content="{{ siteName }}">
+    <meta property="og:locale" content="{{ ogLocale }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ metaTitle }}">
+    <meta name="twitter:description" content="{{ metaDescription }}">
+    <meta name="twitter:image" content="{{ metaImage }}">
+    <meta name="twitter:image:alt" content="{{ imageAlt }}">
+    {% if siteData.twitter %}
+      <meta name="twitter:site" content="{{ siteData.twitter }}">
+      <meta name="twitter:creator" content="{{ siteData.twitter }}">
+    {% endif %}
+
+    <!-- Schema.org Structured Data -->
+    {% if seo.schema %}
+      <script type="application/ld+json">
+        {{ seo.schema | jsonify }}
+      </script>
+    {% else %}
+      {% capture defaultSchema %}
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "name": "{{ siteName | escape }}",
+      "url": "{{ siteUrl }}",
+      "logo": "{{ logoUrl }}",
+      "legalName": "{{ siteData.legalName | default: siteName | escape }}",
+      "description": "{{ metaDescription | escape }}",
+      "email": "mailto:{{ siteData.email }}",
+      "sameAs": [{% if siteData.sameAs %}{% for profile in siteData.sameAs %}"{{ profile }}"{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{ siteAddress.addressLocality | default: '' }}",
+        "addressRegion": "{{ siteAddress.addressRegion | default: '' }}",
+        "addressCountry": "{{ siteAddress.addressCountry | default: '' }}"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "name": "{{ siteName | escape }}",
+      "url": "{{ siteUrl }}",
+      "description": "{{ siteData.tagline | default: metaDescription | escape }}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ siteName | escape }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ logoUrl }}"
+        }
+      },
+      "potentialAction": {
+        "@type": "ContactAction",
+        "target": "mailto:{{ siteData.email }}",
+        "queryInput": "required"
+      }
+    }
+  ]
+}
+      {% endcapture %}
+      <script type="application/ld+json">{{ defaultSchema | strip }}</script>
+    {% endif %}
 
     <!-- Stylesheet -->
     <link href="/dist/output.css" rel="stylesheet">
