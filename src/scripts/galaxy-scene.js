@@ -26,17 +26,17 @@ const initGalaxyScene = () => {
    * Galaxy Parameters (Enhanced)
    */
   const parameters = {
-    count: 15000, // Reduced for better performance
+    count: 20000, // Reduced for better performance
     size: 0.15, // Slightly larger for better visibility
-    radius: 15,
-    branches: 1,
-    spin: 3,
+    radius: 18.81,
+    branches: 3,
+    spin: 2.38,
     randomness: 2,
     randomnessPower: 3.58,
     insideColor: '#f2f2f2',
     outsideColor: '#d8ddee',
     transitionDuration: 4,
-    affectedPercentage: 0.4, // Increased for more dynamic effect
+    affectedPercentage: 0.3, // Increased for more dynamic effect
   };
 
   let geometry = null;
