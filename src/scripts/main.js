@@ -507,8 +507,8 @@ function initDynamicFavicon() {
   if (!faviconLink) return;
 
   const colors = [
-    ['#D8DDEE', '#4A64B5'], // Original: Blue-ish, Gray
-    ['#4A64B5', '#D8DDEE'], // Red-ish, Gray
+    ['#D8DDEE', '#A7B7F1'], // Original: Blue-ish, Gray
+    ['#A7B7F1', '#D8DDEE'], // Red-ish, Gray
   ];
 
   // Helper function to convert hex to RGB
