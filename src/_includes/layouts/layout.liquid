@@ -15,7 +15,7 @@
         {% assign metaTitle = titleCandidate | append: ' | ' | append: siteName %}
       {% endif %}
     {% endif %}
-    {% assign metaDescription = seo.description | default: description | default: siteData.description | default: 'Smelter Studio is a Canadian digital product studio specializing in UX engineering, accessibility, and high-performance websites.' %}
+    {% assign metaDescription = seo.description | default: description | default: siteData.description | default: 'Smelter Studio is a Canadian digital product studio specializing in accessible, high-performance digital products.' %}
     {% assign siteUrl = siteData.url | default: 'https://www.smelter.studio' %}
     {% assign rawCanonical = seo.canonical | default: seo.url | default: page_url | default: page.url | default: '/' %}
     {% if rawCanonical contains 'http' %}
